@@ -1,0 +1,544 @@
+{
+  "buildings": [
+    {
+      "name": "A講義棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "A1講義棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "A2講義棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "B研究棟",
+      "description": "教務課",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "B1学生実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "B2研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "C研究棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "C1学生実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "C2研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "C3研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "D研究棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "D1学生実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "D2研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "D3研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "D4大学院研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "F研究棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "F1研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "F2総合研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "G研究棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "G1研究実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "体育館",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "健康支援センター",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "トレーニングジム",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "プール",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "野球場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "陸上競技場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "TUTグローバルハウスG棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "学生宿舎A棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "学生宿舎B棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "学生宿舎C棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "学生宿舎D棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "学生宿舎E棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "学生宿舎F棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "共用棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "放射線実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "I-1イノベーション総合研究棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "I-2イノベーション総合研究棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "教育研究基盤センター",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "実験実習工場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "E0低層実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "E1低層実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "E2低層実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "E3低層実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "E4低層実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "E5低層実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "自然エネルギー実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "インキュベーション棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "環境防災実験棟",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "ベンチャー・ビジネス・ラボラトリー",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "次世代半導体・センサ科学研究所",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "サカキパーク",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "駐輪場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "北駐車場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "東駐車場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "南駐車場",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "福利施設",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "情報メディア基盤センター・IT活用教育センター",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "付属図書館",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "グローバルネットワーク推進センター",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "事務局",
+      "description": "講義棟",
+      "facility": "",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ]
+}
