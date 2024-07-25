@@ -10,18 +10,30 @@ import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
 import { useState } from "react";
 import { transform } from "ol/proj";
+import json from "./assets/map.json";
 
 const map = new Map({
   view: new View({
     center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
     zoom: 17, //ズームレベル
     minZoom: 16, //最小ズームレベル
-    maxZoom: 18,
+    maxZoom: 19,
   }),
 });
+
+const tile = new Tile({ source: new OSM() });
+const vector = new VectorLayer({ source: new VectorSource() });
+
 function App() {
   const [building, setBuilding] = useState<Building | null>(null);
+  const [buildings, setBuildings] = useState<Building[]>(json.buildings);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+
+  // map.on("click", (event) => {
+  //   const coordinates = event.coordinate;
+  //   const point = new Point(coordinates).transform("EPSG:3857", "EPSG:4326");
+  //   console.log(point.getFlatCoordinates());
+  // });
 
   return (
     <div className="relative h-dvh overflow-hidden">
@@ -36,44 +48,34 @@ function App() {
         <OlMap
           map={map}
           onClick={() => {
-            alert("feature以外をクリック");
+            // alert("feature以外をクリック");
           }}
         >
-          <OlLayer layer={new Tile({ source: new OSM() })}></OlLayer>
-          <OlLayer layer={new VectorLayer({ source: new VectorSource() })}>
-            <OlFeature
-              feature={
-                new Feature({
-                  geometry: new Point([137.410785, 34.7014612]).transform(
-                    "EPSG:4326",
-                    "EPSG:3857"
-                  ),
-                  name: "A講義棟",
-                })
-              }
-              onClick={() => {
-                setIsPanelOpen(true);
-              }}
-            />
-            <OlFeature
-              feature={
-                new Feature({
-                  geometry: new Point([137.4106308, 34.7019698]).transform(
-                    "EPSG:4326",
-                    "EPSG:3857"
-                  ),
-                  name: "A2講義棟",
-                })
-              }
-              onClick={() => {
-                setIsPanelOpen(true);
-              }}
-            />
+          <OlLayer layer={tile}></OlLayer>
+          <OlLayer layer={vector}>
+            {buildings.map((building, index) => (
+              <OlFeature
+                key={index}
+                feature={
+                  new Feature({
+                    geometry: new Point([
+                      building.position.x,
+                      building.position.y,
+                    ]).transform("EPSG:4326", "EPSG:3857"),
+                    name: building.name,
+                  })
+                }
+                onClick={() => {
+                  setIsPanelOpen(true);
+                  setBuilding(building);
+                }}
+              />
+            ))}
           </OlLayer>
         </OlMap>
       </div>
       {isPanelOpen && (
-        <div className="absolute top-0 left-0 h-full w-1/4 bg-white shadow-lg z-20 p-4 overflow-y-auto">
+        <div className="absolute top-0 left-0 h-full w-1/3 bg-white shadow-lg z-20 p-4 overflow-y-auto">
           <h2 className="text-xl font-bold mb-4">{building?.name}</h2>
           <p>{building?.description}</p>
           <button
