@@ -1,22 +1,20 @@
-import { SearchBar, Building } from "./components/SearchBar";
-import { Point } from "ol/geom";
-import { OlMap } from "./components/OlMap";
-import { Feature, Map, View } from "ol";
-import { OSM } from "ol/source";
-import { Tile } from "ol/layer";
-import { OlFeature } from "./components/OlFeature";
-import { OlLayer } from "./components/OlLayer";
-import VectorLayer from "ol/layer/Vector";
-import VectorSource from "ol/source/Vector";
-import { useCallback, useMemo, useState } from "react";
-import { transform } from "ol/proj";
-import json from "./assets/map.json";
-
-
+import { Feature, Map, View } from 'ol';
+import { Point } from 'ol/geom';
+import { Tile } from 'ol/layer';
+import VectorLayer from 'ol/layer/Vector';
+import { transform } from 'ol/proj';
+import { OSM } from 'ol/source';
+import VectorSource from 'ol/source/Vector';
+import { useMemo, useState } from 'react';
+import json from './assets/map.json';
+import { OlFeature } from './components/OlFeature';
+import { OlLayer } from './components/OlLayer';
+import { OlMap } from './components/OlMap';
+import { type Building, SearchBar } from './components/SearchBar';
 
 function App() {
   const [building, setBuilding] = useState<Building | null>(null);
-  const [buildings, setBuildings] = useState<Building[]>(json.buildings);
+  const [buildings, _] = useState<Building[]>(json.buildings);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   // map.on("click", (event) => {
@@ -25,41 +23,50 @@ function App() {
   //   console.log(point.getFlatCoordinates());
   // });
 
-  const olMapMemo = useMemo(()=>      <OlMap
-  builder={()=>new Map({
-    view: new View({
-      center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
-      zoom: 17, //ズームレベル
-      minZoom: 16, //最小ズームレベル
-      maxZoom: 19,
-    }),
-  })}
-  onClick={() => {
-    // alert("feature以外をクリック");
-  }}
->
-  <OlLayer builder={()=> new Tile({ source: new OSM() })}></OlLayer>
-  <OlLayer builder={()=>new VectorLayer({ source: new VectorSource() })}>
-    {buildings.map((building, index) => (
-      <OlFeature
-        key={index}
-        builder={()=>
-          new Feature({
-            geometry: new Point([
-              building.position.x,
-              building.position.y,
-            ]).transform("EPSG:4326", "EPSG:3857"),
-            name: building.name,
+  const olMapMemo = useMemo(
+    () => (
+      <OlMap
+        builder={() =>
+          new Map({
+            view: new View({
+              center: transform([137.408, 34.7016], 'EPSG:4326', 'EPSG:3857'),
+              zoom: 17, //ズームレベル
+              minZoom: 16, //最小ズームレベル
+              maxZoom: 19,
+            }),
           })
         }
         onClick={() => {
-          setIsPanelOpen(true);
-          setBuilding(building);
+          // alert("feature以外をクリック");
         }}
-      />
-    ))}
-  </OlLayer>
-</OlMap>,[buildings])
+      >
+        <OlLayer builder={() => new Tile({ source: new OSM() })} />
+        <OlLayer
+          builder={() => new VectorLayer({ source: new VectorSource() })}
+        >
+          {buildings.map((building) => (
+            <OlFeature
+              key={building.name}
+              builder={() =>
+                new Feature({
+                  geometry: new Point([
+                    building.position.x,
+                    building.position.y,
+                  ]).transform('EPSG:4326', 'EPSG:3857'),
+                  name: building.name,
+                })
+              }
+              onClick={() => {
+                setIsPanelOpen(true);
+                setBuilding(building);
+              }}
+            />
+          ))}
+        </OlLayer>
+      </OlMap>
+    ),
+    [buildings],
+  );
 
   return (
     <div className="relative h-dvh overflow-hidden">
@@ -70,14 +77,13 @@ function App() {
           }}
         />
       </div>
-      <div className="relative h-full">
-{olMapMemo}
-      </div>
+      <div className="relative h-full">{olMapMemo}</div>
       {isPanelOpen && (
         <div className="absolute top-0 left-0 h-full w-1/3 bg-white shadow-lg z-20 p-4 overflow-y-auto">
           <h2 className="text-xl font-bold mb-4">{building?.name}</h2>
           <p>{building?.description}</p>
           <button
+            type="button"
             onClick={() => setIsPanelOpen(false)}
             className="mt-4 p-2 bg-red-500 text-white rounded"
           >

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import json from "../assets/map.json";
+import { useEffect, useState } from 'react';
+import json from '../assets/map.json';
 
 export interface Building {
   name: string;
@@ -13,8 +13,8 @@ function contain_all_char(name: string, word: string) {
   for (let i = 0; i < word.length; i++) {
     if (
       !name_set.has(word[i].toLowerCase()) &&
-      word[i] !== " " &&
-      word[i] !== "　"
+      word[i] !== ' ' &&
+      word[i] !== '　'
     ) {
       return false;
     }
@@ -28,12 +28,12 @@ interface SearchBarProps {
 
 export function SearchBar(props: SearchBarProps) {
   const buildings: Building[] = json.buildings;
-  const [word, setWord] = useState<string>("");
+  const [word, setWord] = useState<string>('');
   const [res, setRes] = useState<Building[]>([]);
   const [select, setSelet] = useState<Building | null>(null);
 
   useEffect(() => {
-    if (word === "") {
+    if (word === '') {
       setRes([]);
     } else {
       const result = buildings.filter((building) => {
@@ -41,17 +41,17 @@ export function SearchBar(props: SearchBarProps) {
           contain_all_char(building.name.toLowerCase(), word.toLowerCase()) ||
           contain_all_char(
             building.facility.toLowerCase(),
-            word.toLowerCase()
+            word.toLowerCase(),
           ) ||
           contain_all_char(
             building.description.toLowerCase(),
-            word.toLowerCase()
+            word.toLowerCase(),
           )
         );
       });
       setRes(result);
     }
-  }, [word]);
+  }, [word, buildings]);
 
   return (
     <>
@@ -94,7 +94,9 @@ export function SearchBar(props: SearchBarProps) {
           {select === null && res.length !== 0 && (
             <ul className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               {res.map((building) => (
+                // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
                 <li
+                  key={building.name}
                   onClick={(_) => {
                     setSelet(building);
                     setWord(building.name);

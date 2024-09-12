@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useOlMap } from "./OlMapContext";
-import { OlLayerContext } from "./OlLayerContext";
-import BaseLayer from "ol/layer/Base";
+import type BaseLayer from 'ol/layer/Base';
+import { useEffect, useState } from 'react';
+import { OlLayerContext } from './OlLayerContext';
+import { useOlMap } from './OlMapContext';
 
 interface Props {
   builder: () => BaseLayer;
@@ -9,7 +9,7 @@ interface Props {
 
 export function OlLayer({ builder, children }: React.PropsWithChildren<Props>) {
   const map = useOlMap();
-  const [layer, setLayer] = useState(builder)
+  const [layer, setLayer] = useState(builder);
 
   useEffect(() => {
     const layer = builder();
@@ -18,7 +18,7 @@ export function OlLayer({ builder, children }: React.PropsWithChildren<Props>) {
 
     return () => {
       map.removeLayer(layer);
-      layer.dispose()
+      layer.dispose();
     };
   }, [builder, map]);
 

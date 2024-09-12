@@ -1,8 +1,9 @@
-import { Map, MapBrowserEvent } from "ol";
-import React, { useEffect, useRef, useState } from "react";
-import { OlMapContext } from "./OlMapContext";
+import { Map, type MapBrowserEvent } from 'ol';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { OlMapContext } from './OlMapContext';
 
-import "ol/ol.css";
+import 'ol/ol.css';
 
 interface Props {
   builder: () => Map;
@@ -15,7 +16,7 @@ export function OlMap({
   children,
 }: React.PropsWithChildren<Props>) {
   const container = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState(builder)
+  const [map, setMap] = useState(builder);
 
   useEffect(() => {
     const map = builder();
@@ -31,19 +32,19 @@ export function OlMap({
         onClick();
       }
     };
-    map.on("click", listener);
+    map.on('click', listener);
 
-    setMap(map)
+    setMap(map);
 
     return () => {
-      map.un("click", listener);
+      map.un('click', listener);
       map.dispose();
-    }
+    };
   }, [builder, onClick]);
 
   return (
     <OlMapContext.Provider value={map}>
-      <div ref={container} style={{ width: "100%", height: "100%" }}>
+      <div ref={container} style={{ width: '100%', height: '100%' }}>
         {children}
       </div>
     </OlMapContext.Provider>
