@@ -10,6 +10,7 @@
     "biome": "biome check --write src/"
   },
   "dependencies": {
+    "modern-normalize": "^3.0.1",
     "ol": "^9.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

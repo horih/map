@@ -6,17 +6,17 @@ import { useOlLayer } from './OlLayerContext';
 import { useOlMap } from './OlMapContext';
 
 interface Props {
-  builder: () => Feature;
+  builder: (map: Map) => Feature;
   onClick?: (map: Map) => void;
 }
 
 export function OlFeature({ builder, onClick }: Props) {
   const map = useOlMap();
   const layer = useOlLayer(VectorLayer<FeatureLike>);
-  const [_, setFeature] = useState(builder);
+  const [_, setFeature] = useState(builder(map));
 
   useEffect(() => {
-    const feature = builder();
+    const feature = builder(map);
     layer.getSource()?.addFeature(feature);
     const listener = (e: MapBrowserEvent<UIEvent>) => {
       const f = map.forEachFeatureAtPixel(e.pixel, (feature) => {
