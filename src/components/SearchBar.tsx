@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import json from '../assets/map.json';
+import json from '../assets/result.json';
 
 export interface Building {
   name: string;
   description: string;
-  facility: string;
-  position: { x: number; y: number };
+  facilities: string[];
+  coordinates: { latitude: number; longitude: number };
 }
 
 function contain_all_char(name: string, word: string) {
@@ -27,7 +27,7 @@ interface SearchBarProps {
 }
 
 export function SearchBar(props: SearchBarProps) {
-  const buildings: Building[] = json.buildings;
+  const buildings = Object.values(json);
   const [word, setWord] = useState<string>('');
   const [res, setRes] = useState<Building[]>([]);
   const [select, setSelet] = useState<Building | null>(null);
@@ -39,10 +39,6 @@ export function SearchBar(props: SearchBarProps) {
       const result = buildings.filter((building) => {
         return (
           contain_all_char(building.name.toLowerCase(), word.toLowerCase()) ||
-          contain_all_char(
-            building.facility.toLowerCase(),
-            word.toLowerCase(),
-          ) ||
           contain_all_char(
             building.description.toLowerCase(),
             word.toLowerCase(),
