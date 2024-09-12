@@ -8,14 +8,17 @@ import Icon from 'ol/style/Icon';
 import Style from 'ol/style/Style';
 import { useMemo, useState } from 'react';
 import geojson from './assets/78.json';
+import geojson2 from './assets/546.json';
 import json from './assets/result.json';
 import { OlFeature } from './components/OlFeature';
 import { OlLayer } from './components/OlLayer';
 import { OlMap } from './components/OlMap';
-import { type Building, SearchBar } from './components/SearchBar';
+import { type Building } from './components/SearchBar';
+import Geolocation from 'ol/Geolocation.js';
 
 import Fill from 'ol/style/Fill';
 import iconSrc from './assets/icon.png';
+import Stroke from 'ol/style/Stroke';
 
 const iconStyle = new Style({
   image: new Icon({
@@ -67,9 +70,37 @@ function App() {
 
             return new VectorLayer({
               source: vectorSource,
+              background: 'rgb(237, 243, 211)',
               style: new Style({
-                fill: new Fill({
+                stroke: new Stroke({
                   color: 'gray',
+                  width: 1,
+                }),
+                fill: new Fill({
+                  color: 'rgb(230, 230, 230)',
+                }),
+              }),
+            });
+          }}
+        />
+        <OlLayer
+          builder={() => {
+            const vectorSource = new VectorSource({
+              features: new GeoJSON().readFeatures(geojson2).map((feature) => {
+                feature.getGeometry()?.transform('EPSG:4326', 'EPSG:3857');
+                return feature;
+              }),
+            });
+
+            return new VectorLayer({
+              source: vectorSource,
+              style: new Style({
+                stroke: new Stroke({
+                  color: 'gray',
+                  width: 1,
+                }),
+                fill: new Fill({
+                  color: 'rgb(223, 208, 216)',
                 }),
               }),
             });
@@ -78,6 +109,28 @@ function App() {
         <OlLayer
           builder={() => new VectorLayer({ source: new VectorSource() })}
         >
+          <OlFeature
+            builder={(map) => {
+              const feature = new Feature();
+
+              const geolocation = new Geolocation({
+                trackingOptions: {
+                  enableHighAccuracy: true,
+                },
+                projection: map.getView().getProjection(),
+              });
+              geolocation.setTracking(true);
+              geolocation.on('change:position', () => {
+                const coordinates = geolocation.getPosition();
+                feature.setGeometry(
+                  coordinates ? new Point(coordinates) : undefined,
+                );
+              });
+
+              feature.setStyle(iconStyle);
+              return feature;
+            }}
+          />
           {buildings.map((unit) => (
             <OlFeature
               key={unit.name}
@@ -131,12 +184,12 @@ function App() {
           zIndex: 10,
         }}
       >
-        <SearchBar
+        {/* <SearchBar
           onSelect={(e) => {
             setBuilding(e);
             setIsPanelOpen(true);
           }}
-        />
+        /> */}
       </div>
       <div
         style={{
