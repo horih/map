@@ -55,14 +55,48 @@ export function SearchBar(props: SearchBarProps) {
 
   return (
     <>
-      <form autoComplete="off" className="max-w-md mx-auto">
-        <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+      <form
+        autoComplete="off"
+        style={{ maxWidth: '28rem', marginLeft: 'auto', marginRight: 'auto' }}
+      >
+        <label
+          style={{
+            marginBottom: '0.5rem',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            color: '#111827',
+            position: 'absolute',
+            width: '1px',
+            height: '1px',
+            padding: 0,
+            margin: '-1px',
+            overflow: 'hidden',
+            clip: 'rect(0, 0, 0, 0)',
+            whiteSpace: 'nowrap',
+            borderWidth: 0,
+          }}
+        >
           Search
         </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        <div style={{ position: 'relative' }}>
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              display: 'flex',
+              alignItems: 'center',
+              paddingLeft: '0.75rem',
+              pointerEvents: 'none',
+            }}
+          >
             <svg
-              className="w-4 h-4 text-gray-500 dark:text-gray-400"
+              style={{
+                width: '1rem',
+                height: '1rem',
+                color: '#6B7280', // text-gray-500
+              }}
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -80,7 +114,18 @@ export function SearchBar(props: SearchBarProps) {
           <input
             type="search"
             id="default-search"
-            className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            style={{
+              display: 'block', // block
+              width: '100%', // w-full
+              padding: '1rem', // p-4
+              paddingInlineStart: '2.5rem', // ps-10 (padding-left)
+              fontSize: '0.875rem', // text-sm
+              color: '#111827', // text-gray-900
+              border: '1px solid #d1d5db', // border & border-gray-300
+              borderRadius: '0.5rem', // rounded-lg
+              backgroundColor: '#f9fafb', // bg-gray-50
+              // focus:ring & focus:border (handled dynamically or with additional logic for focus states)
+            }}
             placeholder="Search..."
             required
             value={word}
@@ -92,7 +137,19 @@ export function SearchBar(props: SearchBarProps) {
         </div>
         <div>
           {select === null && res.length !== 0 && (
-            <ul className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <ul
+              style={{
+                backgroundColor: '#f9fafb', // bg-gray-50
+                border: '1px solid #d1d5db', // border & border-gray-300
+                color: '#111827', // text-gray-900
+                fontSize: '0.875rem', // text-sm
+                borderRadius: '0.5rem', // rounded-lg
+                display: 'block', // block
+                width: '100%', // w-full
+                padding: '0.625rem', // p-2.5 (padding = 2.5/4 = 0.625rem)
+                // Dark mode and focus states are typically managed with className or additional logic
+              }}
+            >
               {res.map((building) => (
                 // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
                 <li
