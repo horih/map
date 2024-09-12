@@ -131,13 +131,13 @@ function App() {
               feature.setStyle(
                 new Style({
                   image: new CircleStyle({
-                    radius: 6,
+                    radius: 20,
                     fill: new Fill({
                       color: '#3399CC',
                     }),
                     stroke: new Stroke({
                       color: '#fff',
-                      width: 2,
+                      width: 5,
                     }),
                   }),
                 }),
