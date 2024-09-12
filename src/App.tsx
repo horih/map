@@ -11,11 +11,24 @@ import { OlFeature } from './components/OlFeature';
 import { OlLayer } from './components/OlLayer';
 import { OlMap } from './components/OlMap';
 import { type Building, SearchBar } from './components/SearchBar';
+import Style from 'ol/style/Style';
+import Icon from 'ol/style/Icon';
+
+import iconSrc from './assets/icon.png';
 
 function App() {
   const [building, setBuilding] = useState<Building | null>(null);
   const [buildings, _] = useState<Building[]>(json.buildings);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+
+  const iconStyle = new Style({
+    image: new Icon({
+      anchor: [0.5, 46],
+      anchorXUnits: 'fraction',
+      anchorYUnits: 'pixels',
+      src: iconSrc,
+    }),
+  });
 
   // map.on("click", (event) => {
   //   const coordinates = event.coordinate;
@@ -28,6 +41,7 @@ function App() {
       <OlMap
         builder={() =>
           new Map({
+            controls: [],
             view: new View({
               center: transform([137.408, 34.7016], 'EPSG:4326', 'EPSG:3857'),
               zoom: 17, //ズームレベル
@@ -47,18 +61,31 @@ function App() {
           {buildings.map((building) => (
             <OlFeature
               key={building.name}
-              builder={() =>
-                new Feature({
+              builder={() => {
+                const feature = new Feature({
                   geometry: new Point([
                     building.position.x,
                     building.position.y,
                   ]).transform('EPSG:4326', 'EPSG:3857'),
                   name: building.name,
-                })
-              }
-              onClick={() => {
+                  //style: iconStyle,
+                });
+                feature.setStyle(iconStyle);
+                return feature;
+              }}
+              onClick={(map) => {
                 setIsPanelOpen(true);
                 setBuilding(building);
+                map
+                  .getView()
+                  .fit(
+                    new Point([
+                      building.position.x,
+                      building.position.y,
+                    ]).transform('EPSG:4326', 'EPSG:3857'),
+                    { duration: 500 },
+                  );
+                //map.getView().setZoom(19);
               }}
             />
           ))}
@@ -88,6 +115,7 @@ function App() {
         <SearchBar
           onSelect={(e) => {
             setBuilding(e);
+            setIsPanelOpen(true);
           }}
         />
       </div>
