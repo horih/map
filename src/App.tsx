@@ -1,19 +1,20 @@
 import { Feature, Map, View } from 'ol';
+import GeoJSON from 'ol/format/GeoJSON.js';
 import { Point } from 'ol/geom';
-import { Tile } from 'ol/layer';
 import VectorLayer from 'ol/layer/Vector';
 import { transform } from 'ol/proj';
-import { OSM } from 'ol/source';
 import VectorSource from 'ol/source/Vector';
 import Icon from 'ol/style/Icon';
 import Style from 'ol/style/Style';
 import { useMemo, useState } from 'react';
+import geojson from './assets/78.json';
 import json from './assets/result.json';
 import { OlFeature } from './components/OlFeature';
 import { OlLayer } from './components/OlLayer';
 import { OlMap } from './components/OlMap';
 import { type Building, SearchBar } from './components/SearchBar';
 
+import Fill from 'ol/style/Fill';
 import iconSrc from './assets/icon.png';
 
 const iconStyle = new Style({
@@ -54,7 +55,26 @@ function App() {
           // alert("feature以外をクリック");
         }}
       >
-        <OlLayer builder={() => new Tile({ source: new OSM() })} />
+        {/* <OlLayer builder={() => new Tile({ source: new OSM() })} /> */}
+        <OlLayer
+          builder={() => {
+            const vectorSource = new VectorSource({
+              features: new GeoJSON().readFeatures(geojson).map((feature) => {
+                feature.getGeometry()?.transform('EPSG:4326', 'EPSG:3857');
+                return feature;
+              }),
+            });
+
+            return new VectorLayer({
+              source: vectorSource,
+              style: new Style({
+                fill: new Fill({
+                  color: 'gray',
+                }),
+              }),
+            });
+          }}
+        />
         <OlLayer
           builder={() => new VectorLayer({ source: new VectorSource() })}
         >
