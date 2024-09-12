@@ -5,6 +5,7 @@ import VectorLayer from 'ol/layer/Vector';
 import { transform } from 'ol/proj';
 import VectorSource from 'ol/source/Vector';
 import Icon from 'ol/style/Icon';
+import CircleStyle from 'ol/style/Circle';
 import Style from 'ol/style/Style';
 import { useMemo, useState } from 'react';
 import geojson from './assets/78.json';
@@ -127,7 +128,20 @@ function App() {
                 );
               });
 
-              feature.setStyle(iconStyle);
+              feature.setStyle(
+                new Style({
+                  image: new CircleStyle({
+                    radius: 6,
+                    fill: new Fill({
+                      color: '#3399CC',
+                    }),
+                    stroke: new Stroke({
+                      color: '#fff',
+                      width: 2,
+                    }),
+                  }),
+                }),
+              );
               return feature;
             }}
           />
