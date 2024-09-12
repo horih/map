@@ -1,1 +1,584 @@
-{"2190ac37-0812-4055-9885-8ee7b0bd8028":{"name":"A講義棟","description":"講義棟","uuid":"2190ac37-0812-4055-9885-8ee7b0bd8028","coordinates":{"latitude":137.4107966501511,"longitude":34.70147952212507},"facilities":[]},"512a9260-13f3-4b59-8232-726796358eac":{"name":"A1講義棟","description":"講義棟","uuid":"512a9260-13f3-4b59-8232-726796358eac","coordinates":{"latitude":137.4102745132446,"longitude":34.70193792515184},"facilities":[]},"8d9c2c20-dfea-43a4-bf3c-2cb8316ddc86":{"name":"A2講義棟","description":"講義棟","uuid":"8d9c2c20-dfea-43a4-bf3c-2cb8316ddc86","coordinates":{"latitude":137.41060353110203,"longitude":34.70198494079297},"facilities":[]},"8c968770-921c-4826-9220-31ae7a4aa2ef":{"name":"B研究棟","description":"教務課","uuid":"8c968770-921c-4826-9220-31ae7a4aa2ef","coordinates":{"latitude":137.4099895714767,"longitude":34.701472416386935},"facilities":[]},"3bd5155f-5f66-42f8-9e7a-5666034f08a0":{"name":"B1学生実験棟","description":"講義棟","uuid":"3bd5155f-5f66-42f8-9e7a-5666034f08a0","coordinates":{"latitude":137.41003132640304,"longitude":34.70170284708348},"facilities":[]},"e13f6429-0cd8-4dfd-9cfe-05170b2c01e7":{"name":"B2研究実験棟","description":"講義棟","uuid":"e13f6429-0cd8-4dfd-9cfe-05170b2c01e7","coordinates":{"latitude":137.40966654597702,"longitude":34.70174986272369},"facilities":[]},"040aabe7-deaf-45e4-920c-33f4d0258345":{"name":"C研究棟","description":"講義棟","uuid":"040aabe7-deaf-45e4-920c-33f4d0258345","coordinates":{"latitude":137.40919805357822,"longitude":34.70132965904622},"facilities":[]},"0d29fda1-7fe5-4c9c-9791-63bedd2d24f2":{"name":"C1学生実験棟","description":"講義棟","uuid":"0d29fda1-7fe5-4c9c-9791-63bedd2d24f2","coordinates":{"latitude":137.40941620635982,"longitude":34.70155886129221},"facilities":[]},"663ffe08-576f-4696-8018-6b974384188e":{"name":"C2研究実験棟","description":"講義棟","uuid":"663ffe08-576f-4696-8018-6b974384188e","coordinates":{"latitude":137.40900851058967,"longitude":34.70156532974836},"facilities":[]},"0aadebf4-93db-4fe8-acff-50b0a5855446":{"name":"C3研究実験棟","description":"講義棟","uuid":"0aadebf4-93db-4fe8-acff-50b0a5855446","coordinates":{"latitude":137.40912946120548,"longitude":34.70182893988155},"facilities":[]},"2d316a7b-fc3d-4d5b-9a15-0fe06a2e30b3":{"name":"D研究棟","description":"講義棟","uuid":"2d316a7b-fc3d-4d5b-9a15-0fe06a2e30b3","coordinates":{"latitude":137.40852824912162,"longitude":34.701199113103456},"facilities":[]},"01cd8562-6a32-4cfa-84cc-18937a5d4629":{"name":"D1学生実験棟","description":"講義棟","uuid":"01cd8562-6a32-4cfa-84cc-18937a5d4629","coordinates":{"latitude":137.40871332103094,"longitude":34.70145787677892},"facilities":[]},"18d3fa7a-0c92-4fd5-b4a7-38ea5f1023a9":{"name":"D2研究実験棟","description":"講義棟","uuid":"18d3fa7a-0c92-4fd5-b4a7-38ea5f1023a9","coordinates":{"latitude":137.40830027909792,"longitude":34.70143886086923},"facilities":[]},"aa14b2d5-6172-443d-885c-28a6886d2fc9":{"name":"D3研究実験棟","description":"講義棟","uuid":"aa14b2d5-6172-443d-885c-28a6886d2fc9","coordinates":{"latitude":137.40835941600795,"longitude":34.701690409850826},"facilities":[]},"12acf00e-a6f2-49a2-8d26-191d61b15174":{"name":"D4大学院研究実験棟","description":"講義棟","uuid":"12acf00e-a6f2-49a2-8d26-191d61b15174","coordinates":{"latitude":137.40866349995247,"longitude":34.70172938551208},"facilities":[]},"9fd89277-3aa9-4a77-a48a-abf7c6400918":{"name":"F研究棟","description":"講義棟","uuid":"9fd89277-3aa9-4a77-a48a-abf7c6400918","coordinates":{"latitude":137.40783131817489,"longitude":34.70114294470298},"facilities":[]},"69c96056-4854-48ef-9681-c29b17ffa977":{"name":"F1研究実験棟","description":"講義棟","uuid":"69c96056-4854-48ef-9681-c29b17ffa977","coordinates":{"latitude":137.40795797933689,"longitude":34.701439167070504},"facilities":[]},"a27de99c-fb50-482e-8e24-98f032f7a14d":{"name":"F2総合研究実験棟","description":"講義棟","uuid":"a27de99c-fb50-482e-8e24-98f032f7a14d","coordinates":{"latitude":137.40784438808882,"longitude":34.7017026292824},"facilities":[]},"46ce258d-db77-4029-a37f-5400af446ca8":{"name":"G研究棟","description":"講義棟","uuid":"46ce258d-db77-4029-a37f-5400af446ca8","coordinates":{"latitude":137.40731180558197,"longitude":34.70113561354714},"facilities":[]},"8efe68a5-46b7-4b1f-b9e1-abd0c77d46c8":{"name":"G1研究実験棟","description":"講義棟","uuid":"8efe68a5-46b7-4b1f-b9e1-abd0c77d46c8","coordinates":{"latitude":137.40749118804172,"longitude":34.701387363570134},"facilities":[]},"7504cf08-dbde-442d-bc34-87850edcdd26":{"name":"体育館","description":"講義棟","uuid":"7504cf08-dbde-442d-bc34-87850edcdd26","coordinates":{"latitude":137.40590369113718,"longitude":34.701011559685156},"facilities":[]},"1bbc9639-3c14-4e4c-9e27-0117826d02d5":{"name":"健康支援センター","description":"講義棟","uuid":"1bbc9639-3c14-4e4c-9e27-0117826d02d5","coordinates":{"latitude":137.40641281007868,"longitude":34.70114037414683},"facilities":[]},"bdd4c8d0-7c46-4f6d-b9ca-f10e0f2e5a34":{"name":"トレーニングジム","description":"講義棟","uuid":"bdd4c8d0-7c46-4f6d-b9ca-f10e0f2e5a34","coordinates":{"latitude":137.40672671793138,"longitude":34.701022523467145},"facilities":[]},"2d393293-e8ad-4ea7-b469-0bf5ddeb609c":{"name":"プール","description":"講義棟","uuid":"2d393293-e8ad-4ea7-b469-0bf5ddeb609c","coordinates":{"latitude":137.4060674,"longitude":34.7006664},"facilities":[]},"f1b5cbbb-4667-4405-9580-1772ea74aaf1":{"name":"野球場","description":"講義棟","uuid":"f1b5cbbb-4667-4405-9580-1772ea74aaf1","coordinates":{"latitude":0,"longitude":0},"facilities":[]},"6c4a8a58-4042-420c-aa2a-2d4c9c9cbf7d":{"name":"陸上競技場","description":"講義棟","uuid":"6c4a8a58-4042-420c-aa2a-2d4c9c9cbf7d","coordinates":{"latitude":0,"longitude":0},"facilities":[]},"cb367386-af0a-4903-8008-a62f5055d2e9":{"name":"TUTグローバルハウスG棟","description":"講義棟","uuid":"cb367386-af0a-4903-8008-a62f5055d2e9","coordinates":{"latitude":137.40614576832434,"longitude":34.702719092496764},"facilities":[]},"dc7e9062-9d3a-439a-9807-5759c1643554":{"name":"学生宿舎A棟","description":"講義棟","uuid":"dc7e9062-9d3a-439a-9807-5759c1643554","coordinates":{"latitude":137.4053332205883,"longitude":34.70305079292288},"facilities":[]},"bc9e49e3-35b4-473b-a782-fb7271570b93":{"name":"学生宿舎B棟","description":"講義棟","uuid":"bc9e49e3-35b4-473b-a782-fb7271570b93","coordinates":{"latitude":137.40479548494335,"longitude":34.70313415123837},"facilities":[]},"413895f4-d3ea-4557-9fe4-43f451afeab9":{"name":"学生宿舎C棟","description":"講義棟","uuid":"413895f4-d3ea-4557-9fe4-43f451afeab9","coordinates":{"latitude":137.40430122672058,"longitude":34.70295800089292},"facilities":[]},"14d074c9-22ae-4403-8b4b-6cfd1d27d5d6":{"name":"学生宿舎D棟","description":"講義棟","uuid":"14d074c9-22ae-4403-8b4b-6cfd1d27d5d6","coordinates":{"latitude":137.40416711626983,"longitude":34.702572110411154},"facilities":[]},"2c134fb4-0cef-425f-af37-6923eaf77770":{"name":"学生宿舎E棟","description":"講義棟","uuid":"2c134fb4-0cef-425f-af37-6923eaf77770","coordinates":{"latitude":137.40480096998948,"longitude":34.702603275221094},"facilities":[]},"16c5cf34-9dd0-442a-b502-78f9c653aa3c":{"name":"学生宿舎F棟","description":"講義棟","uuid":"16c5cf34-9dd0-442a-b502-78f9c653aa3c","coordinates":{"latitude":137.40649683598033,"longitude":34.70309487995863},"facilities":[]},"1943f2ac-ed56-4d9e-af6a-270ea0ed3374":{"name":"共用棟","description":"講義棟","uuid":"1943f2ac-ed56-4d9e-af6a-270ea0ed3374","coordinates":{"latitude":137.40590867308865,"longitude":34.70311840649286},"facilities":[]},"035d129c-4c3a-4ddf-a1d4-e933796611d7":{"name":"放射線実験棟","description":"講義棟","uuid":"035d129c-4c3a-4ddf-a1d4-e933796611d7","coordinates":{"latitude":137.40694454257556,"longitude":34.70255513855494},"facilities":[]},"03a628eb-54c2-4fd6-a716-8c5ef730fdc5":{"name":"I-1イノベーション総合研究棟","description":"講義棟","uuid":"03a628eb-54c2-4fd6-a716-8c5ef730fdc5","coordinates":{"latitude":137.40705127131866,"longitude":34.70190053948441},"facilities":[]},"d9ee9823-b295-42cf-94ef-36f6baaa48bf":{"name":"I-2イノベーション総合研究棟","description":"講義棟","uuid":"d9ee9823-b295-42cf-94ef-36f6baaa48bf","coordinates":{"latitude":137.4069838533889,"longitude":34.7023400830105},"facilities":[]},"7bba4edd-fcca-4682-ac26-56bc7e4bd40a":{"name":"教育研究基盤センター","description":"講義棟","uuid":"7bba4edd-fcca-4682-ac26-56bc7e4bd40a","coordinates":{"latitude":137.40757226233094,"longitude":34.70256679581992},"facilities":[]},"96d7ffa0-af4f-40c3-b2a7-84f65cae01d8":{"name":"実験実習工場","description":"講義棟","uuid":"96d7ffa0-af4f-40c3-b2a7-84f65cae01d8","coordinates":{"latitude":137.4077285910266,"longitude":34.702042297352165},"facilities":[]},"9a06328c-39d4-4b53-b7e0-267f51201816":{"name":"E0低層実験棟","description":"講義棟","uuid":"9a06328c-39d4-4b53-b7e0-267f51201816","coordinates":{"latitude":137.4082514190873,"longitude":34.702701102654586},"facilities":[]},"0d52957b-a14e-48a5-a475-93c4ccc16d43":{"name":"E1低層実験棟","description":"講義棟","uuid":"0d52957b-a14e-48a5-a475-93c4ccc16d43","coordinates":{"latitude":137.4086784793809,"longitude":34.70274752578406},"facilities":[]},"49766272-533b-4448-a2ac-70827265b539":{"name":"E2低層実験棟","description":"講義棟","uuid":"49766272-533b-4448-a2ac-70827265b539","coordinates":{"latitude":137.40828859836625,"longitude":34.70249836611106},"facilities":[]},"569aa995-3e81-4b0e-b526-7be663581417":{"name":"E3低層実験棟","description":"講義棟","uuid":"569aa995-3e81-4b0e-b526-7be663581417","coordinates":{"latitude":137.4086942651799,"longitude":34.70254826387874},"facilities":[]},"d771c29a-c2c4-4a9a-ad3d-6babe3059802":{"name":"E4低層実験棟","description":"講義棟","uuid":"d771c29a-c2c4-4a9a-ad3d-6babe3059802","coordinates":{"latitude":137.40906441002392,"longitude":34.70277979845052},"facilities":[]},"fa20c61f-fa54-415a-a16a-d57dd8ce4f57":{"name":"E5低層実験棟","description":"講義棟","uuid":"fa20c61f-fa54-415a-a16a-d57dd8ce4f57","coordinates":{"latitude":137.40911506617192,"longitude":34.70257269253601},"facilities":[]},"771cccce-0d5e-4e42-9b79-c5a9647defd0":{"name":"自然エネルギー実験棟","description":"講義棟","uuid":"771cccce-0d5e-4e42-9b79-c5a9647defd0","coordinates":{"latitude":137.40846283718517,"longitude":34.7031393009207},"facilities":[]},"4b386d7c-2aa0-4fd2-9393-446d7949f638":{"name":"インキュベーション棟","description":"講義棟","uuid":"4b386d7c-2aa0-4fd2-9393-446d7949f638","coordinates":{"latitude":137.40891241947693,"longitude":34.70315718744078},"facilities":[]},"2913ac68-befe-4c2b-9161-a93f16e0b7a5":{"name":"環境防災実験棟","description":"講義棟","uuid":"2913ac68-befe-4c2b-9161-a93f16e0b7a5","coordinates":{"latitude":137.40920932462657,"longitude":34.70319152965609},"facilities":[]},"d17de55c-a57e-402e-b8f0-ee5eaecda4bc":{"name":"ベンチャー・ビジネス・ラボラトリー","description":"講義棟","uuid":"d17de55c-a57e-402e-b8f0-ee5eaecda4bc","coordinates":{"latitude":137.4094764172916,"longitude":34.70321209994505},"facilities":[]},"1e130182-943f-4acb-a75e-6965b3e7f7a2":{"name":"次世代半導体・センサ科学研究所","description":"講義棟","uuid":"1e130182-943f-4acb-a75e-6965b3e7f7a2","coordinates":{"latitude":137.40949766099018,"longitude":34.70285575931241},"facilities":[]},"28c6163b-89c4-4d3e-8d68-bf155f4e604b":{"name":"サカキパーク","description":"講義棟","uuid":"28c6163b-89c4-4d3e-8d68-bf155f4e604b","coordinates":{"latitude":137.4077464857512,"longitude":34.70068097696118},"facilities":[]},"3b833ef9-30e5-41dc-8c9a-bcb0ca95be7b":{"name":"駐輪場","description":"講義棟","uuid":"3b833ef9-30e5-41dc-8c9a-bcb0ca95be7b","coordinates":{"latitude":137.40841719064062,"longitude":34.700783087470086},"facilities":[]},"b5d0a3e9-596c-410e-9c2c-847cf586f977":{"name":"北駐車場","description":"講義棟","uuid":"b5d0a3e9-596c-410e-9c2c-847cf586f977","coordinates":{"latitude":0,"longitude":0},"facilities":[]},"9164f905-51e0-40d8-830b-d8dc209f71b3":{"name":"東駐車場","description":"講義棟","uuid":"9164f905-51e0-40d8-830b-d8dc209f71b3","coordinates":{"latitude":0,"longitude":0},"facilities":[]},"dd3058bc-b4e5-4a37-b5d3-bca96f07d6be":{"name":"南駐車場","description":"講義棟","uuid":"dd3058bc-b4e5-4a37-b5d3-bca96f07d6be","coordinates":{"latitude":0,"longitude":0},"facilities":[]},"58e87d41-01d3-4a07-a388-ddd06f704af5":{"name":"福利施設","description":"講義棟","uuid":"58e87d41-01d3-4a07-a388-ddd06f704af5","coordinates":{"latitude":137.40891483651626,"longitude":34.700793933258524},"facilities":[]},"e5f089ae-1619-4897-b2ed-5f93250d3521":{"name":"情報メディア基盤センター・IT活用教育センター","description":"講義棟","uuid":"e5f089ae-1619-4897-b2ed-5f93250d3521","coordinates":{"latitude":137.40962847474964,"longitude":34.70085642612143},"facilities":[]},"80c4b18f-08f9-4f98-9f36-b45826f28f97":{"name":"付属図書館","description":"講義棟","uuid":"80c4b18f-08f9-4f98-9f36-b45826f28f97","coordinates":{"latitude":137.41012231911444,"longitude":34.70090451218557},"facilities":[]},"6405220b-ff85-42d4-bdda-f0bdb41e3535":{"name":"グローバルネットワーク推進センター","description":"講義棟","uuid":"6405220b-ff85-42d4-bdda-f0bdb41e3535","coordinates":{"latitude":137.41064440809635,"longitude":34.700914204987896},"facilities":[]},"8e94d8d7-34ae-4a47-b0d9-736f096e04f9":{"name":"事務局","description":"講義棟","uuid":"8e94d8d7-34ae-4a47-b0d9-736f096e04f9","coordinates":{"latitude":137.41116191154293,"longitude":34.70085468813218},"facilities":[]}}
+{
+  "2190ac37-0812-4055-9885-8ee7b0bd8028": {
+    "name": "A講義棟",
+    "description": "講義棟",
+    "uuid": "2190ac37-0812-4055-9885-8ee7b0bd8028",
+    "coordinates": {
+      "latitude": 137.4107966501511,
+      "longitude": 34.70147952212507
+    },
+    "facilities": []
+  },
+  "512a9260-13f3-4b59-8232-726796358eac": {
+    "name": "A1講義棟",
+    "description": "講義棟",
+    "uuid": "512a9260-13f3-4b59-8232-726796358eac",
+    "coordinates": {
+      "latitude": 137.4102745132446,
+      "longitude": 34.70193792515184
+    },
+    "facilities": []
+  },
+  "8d9c2c20-dfea-43a4-bf3c-2cb8316ddc86": {
+    "name": "A2講義棟",
+    "description": "講義棟",
+    "uuid": "8d9c2c20-dfea-43a4-bf3c-2cb8316ddc86",
+    "coordinates": {
+      "latitude": 137.41060353110203,
+      "longitude": 34.70198494079297
+    },
+    "facilities": []
+  },
+  "8c968770-921c-4826-9220-31ae7a4aa2ef": {
+    "name": "B研究棟",
+    "description": "教務課",
+    "uuid": "8c968770-921c-4826-9220-31ae7a4aa2ef",
+    "coordinates": {
+      "latitude": 137.4099895714767,
+      "longitude": 34.701472416386935
+    },
+    "facilities": []
+  },
+  "3bd5155f-5f66-42f8-9e7a-5666034f08a0": {
+    "name": "B1学生実験棟",
+    "description": "講義棟",
+    "uuid": "3bd5155f-5f66-42f8-9e7a-5666034f08a0",
+    "coordinates": {
+      "latitude": 137.41003132640304,
+      "longitude": 34.70170284708348
+    },
+    "facilities": []
+  },
+  "e13f6429-0cd8-4dfd-9cfe-05170b2c01e7": {
+    "name": "B2研究実験棟",
+    "description": "講義棟",
+    "uuid": "e13f6429-0cd8-4dfd-9cfe-05170b2c01e7",
+    "coordinates": {
+      "latitude": 137.40966654597702,
+      "longitude": 34.70174986272369
+    },
+    "facilities": []
+  },
+  "040aabe7-deaf-45e4-920c-33f4d0258345": {
+    "name": "C研究棟",
+    "description": "講義棟",
+    "uuid": "040aabe7-deaf-45e4-920c-33f4d0258345",
+    "coordinates": {
+      "latitude": 137.40919805357822,
+      "longitude": 34.70132965904622
+    },
+    "facilities": []
+  },
+  "0d29fda1-7fe5-4c9c-9791-63bedd2d24f2": {
+    "name": "C1学生実験棟",
+    "description": "講義棟",
+    "uuid": "0d29fda1-7fe5-4c9c-9791-63bedd2d24f2",
+    "coordinates": {
+      "latitude": 137.40941620635982,
+      "longitude": 34.70155886129221
+    },
+    "facilities": []
+  },
+  "663ffe08-576f-4696-8018-6b974384188e": {
+    "name": "C2研究実験棟",
+    "description": "講義棟",
+    "uuid": "663ffe08-576f-4696-8018-6b974384188e",
+    "coordinates": {
+      "latitude": 137.40900851058967,
+      "longitude": 34.70156532974836
+    },
+    "facilities": []
+  },
+  "0aadebf4-93db-4fe8-acff-50b0a5855446": {
+    "name": "C3研究実験棟",
+    "description": "講義棟",
+    "uuid": "0aadebf4-93db-4fe8-acff-50b0a5855446",
+    "coordinates": {
+      "latitude": 137.40912946120548,
+      "longitude": 34.70182893988155
+    },
+    "facilities": []
+  },
+  "2d316a7b-fc3d-4d5b-9a15-0fe06a2e30b3": {
+    "name": "D研究棟",
+    "description": "講義棟",
+    "uuid": "2d316a7b-fc3d-4d5b-9a15-0fe06a2e30b3",
+    "coordinates": {
+      "latitude": 137.40852824912162,
+      "longitude": 34.701199113103456
+    },
+    "facilities": []
+  },
+  "01cd8562-6a32-4cfa-84cc-18937a5d4629": {
+    "name": "D1学生実験棟",
+    "description": "講義棟",
+    "uuid": "01cd8562-6a32-4cfa-84cc-18937a5d4629",
+    "coordinates": {
+      "latitude": 137.40871332103094,
+      "longitude": 34.70145787677892
+    },
+    "facilities": []
+  },
+  "18d3fa7a-0c92-4fd5-b4a7-38ea5f1023a9": {
+    "name": "D2研究実験棟",
+    "description": "講義棟",
+    "uuid": "18d3fa7a-0c92-4fd5-b4a7-38ea5f1023a9",
+    "coordinates": {
+      "latitude": 137.40830027909792,
+      "longitude": 34.70143886086923
+    },
+    "facilities": []
+  },
+  "aa14b2d5-6172-443d-885c-28a6886d2fc9": {
+    "name": "D3研究実験棟",
+    "description": "講義棟",
+    "uuid": "aa14b2d5-6172-443d-885c-28a6886d2fc9",
+    "coordinates": {
+      "latitude": 137.40835941600795,
+      "longitude": 34.701690409850826
+    },
+    "facilities": []
+  },
+  "12acf00e-a6f2-49a2-8d26-191d61b15174": {
+    "name": "D4大学院研究実験棟",
+    "description": "講義棟",
+    "uuid": "12acf00e-a6f2-49a2-8d26-191d61b15174",
+    "coordinates": {
+      "latitude": 137.40866349995247,
+      "longitude": 34.70172938551208
+    },
+    "facilities": []
+  },
+  "9fd89277-3aa9-4a77-a48a-abf7c6400918": {
+    "name": "F研究棟",
+    "description": "講義棟",
+    "uuid": "9fd89277-3aa9-4a77-a48a-abf7c6400918",
+    "coordinates": {
+      "latitude": 137.40783131817489,
+      "longitude": 34.70114294470298
+    },
+    "facilities": []
+  },
+  "69c96056-4854-48ef-9681-c29b17ffa977": {
+    "name": "F1研究実験棟",
+    "description": "講義棟",
+    "uuid": "69c96056-4854-48ef-9681-c29b17ffa977",
+    "coordinates": {
+      "latitude": 137.40795797933689,
+      "longitude": 34.701439167070504
+    },
+    "facilities": []
+  },
+  "a27de99c-fb50-482e-8e24-98f032f7a14d": {
+    "name": "F2総合研究実験棟",
+    "description": "講義棟",
+    "uuid": "a27de99c-fb50-482e-8e24-98f032f7a14d",
+    "coordinates": {
+      "latitude": 137.40784438808882,
+      "longitude": 34.7017026292824
+    },
+    "facilities": []
+  },
+  "46ce258d-db77-4029-a37f-5400af446ca8": {
+    "name": "G研究棟",
+    "description": "講義棟",
+    "uuid": "46ce258d-db77-4029-a37f-5400af446ca8",
+    "coordinates": {
+      "latitude": 137.40731180558197,
+      "longitude": 34.70113561354714
+    },
+    "facilities": []
+  },
+  "8efe68a5-46b7-4b1f-b9e1-abd0c77d46c8": {
+    "name": "G1研究実験棟",
+    "description": "講義棟",
+    "uuid": "8efe68a5-46b7-4b1f-b9e1-abd0c77d46c8",
+    "coordinates": {
+      "latitude": 137.40749118804172,
+      "longitude": 34.701387363570134
+    },
+    "facilities": []
+  },
+  "7504cf08-dbde-442d-bc34-87850edcdd26": {
+    "name": "体育館",
+    "description": "講義棟",
+    "uuid": "7504cf08-dbde-442d-bc34-87850edcdd26",
+    "coordinates": {
+      "latitude": 137.40590369113718,
+      "longitude": 34.701011559685156
+    },
+    "facilities": []
+  },
+  "1bbc9639-3c14-4e4c-9e27-0117826d02d5": {
+    "name": "健康支援センター",
+    "description": "講義棟",
+    "uuid": "1bbc9639-3c14-4e4c-9e27-0117826d02d5",
+    "coordinates": {
+      "latitude": 137.40641281007868,
+      "longitude": 34.70114037414683
+    },
+    "facilities": []
+  },
+  "bdd4c8d0-7c46-4f6d-b9ca-f10e0f2e5a34": {
+    "name": "トレーニングジム",
+    "description": "講義棟",
+    "uuid": "bdd4c8d0-7c46-4f6d-b9ca-f10e0f2e5a34",
+    "coordinates": {
+      "latitude": 137.40672671793138,
+      "longitude": 34.701022523467145
+    },
+    "facilities": []
+  },
+  "2d393293-e8ad-4ea7-b469-0bf5ddeb609c": {
+    "name": "プール",
+    "description": "講義棟",
+    "uuid": "2d393293-e8ad-4ea7-b469-0bf5ddeb609c",
+    "coordinates": { "latitude": 137.4060674, "longitude": 34.7006664 },
+    "facilities": []
+  },
+  "f1b5cbbb-4667-4405-9580-1772ea74aaf1": {
+    "name": "野球場",
+    "description": "講義棟",
+    "uuid": "f1b5cbbb-4667-4405-9580-1772ea74aaf1",
+    "coordinates": { "latitude": 0, "longitude": 0 },
+    "facilities": []
+  },
+  "6c4a8a58-4042-420c-aa2a-2d4c9c9cbf7d": {
+    "name": "陸上競技場",
+    "description": "講義棟",
+    "uuid": "6c4a8a58-4042-420c-aa2a-2d4c9c9cbf7d",
+    "coordinates": { "latitude": 0, "longitude": 0 },
+    "facilities": []
+  },
+  "cb367386-af0a-4903-8008-a62f5055d2e9": {
+    "name": "TUTグローバルハウスG棟",
+    "description": "講義棟",
+    "uuid": "cb367386-af0a-4903-8008-a62f5055d2e9",
+    "coordinates": {
+      "latitude": 137.40614576832434,
+      "longitude": 34.702719092496764
+    },
+    "facilities": []
+  },
+  "dc7e9062-9d3a-439a-9807-5759c1643554": {
+    "name": "学生宿舎A棟",
+    "description": "講義棟",
+    "uuid": "dc7e9062-9d3a-439a-9807-5759c1643554",
+    "coordinates": {
+      "latitude": 137.4053332205883,
+      "longitude": 34.70305079292288
+    },
+    "facilities": []
+  },
+  "bc9e49e3-35b4-473b-a782-fb7271570b93": {
+    "name": "学生宿舎B棟",
+    "description": "講義棟",
+    "uuid": "bc9e49e3-35b4-473b-a782-fb7271570b93",
+    "coordinates": {
+      "latitude": 137.40479548494335,
+      "longitude": 34.70313415123837
+    },
+    "facilities": []
+  },
+  "413895f4-d3ea-4557-9fe4-43f451afeab9": {
+    "name": "学生宿舎C棟",
+    "description": "講義棟",
+    "uuid": "413895f4-d3ea-4557-9fe4-43f451afeab9",
+    "coordinates": {
+      "latitude": 137.40430122672058,
+      "longitude": 34.70295800089292
+    },
+    "facilities": []
+  },
+  "14d074c9-22ae-4403-8b4b-6cfd1d27d5d6": {
+    "name": "学生宿舎D棟",
+    "description": "講義棟",
+    "uuid": "14d074c9-22ae-4403-8b4b-6cfd1d27d5d6",
+    "coordinates": {
+      "latitude": 137.40416711626983,
+      "longitude": 34.702572110411154
+    },
+    "facilities": []
+  },
+  "2c134fb4-0cef-425f-af37-6923eaf77770": {
+    "name": "学生宿舎E棟",
+    "description": "講義棟",
+    "uuid": "2c134fb4-0cef-425f-af37-6923eaf77770",
+    "coordinates": {
+      "latitude": 137.40480096998948,
+      "longitude": 34.702603275221094
+    },
+    "facilities": []
+  },
+  "16c5cf34-9dd0-442a-b502-78f9c653aa3c": {
+    "name": "学生宿舎F棟",
+    "description": "講義棟",
+    "uuid": "16c5cf34-9dd0-442a-b502-78f9c653aa3c",
+    "coordinates": {
+      "latitude": 137.40649683598033,
+      "longitude": 34.70309487995863
+    },
+    "facilities": []
+  },
+  "1943f2ac-ed56-4d9e-af6a-270ea0ed3374": {
+    "name": "共用棟",
+    "description": "講義棟",
+    "uuid": "1943f2ac-ed56-4d9e-af6a-270ea0ed3374",
+    "coordinates": {
+      "latitude": 137.40590867308865,
+      "longitude": 34.70311840649286
+    },
+    "facilities": []
+  },
+  "035d129c-4c3a-4ddf-a1d4-e933796611d7": {
+    "name": "放射線実験棟",
+    "description": "講義棟",
+    "uuid": "035d129c-4c3a-4ddf-a1d4-e933796611d7",
+    "coordinates": {
+      "latitude": 137.40694454257556,
+      "longitude": 34.70255513855494
+    },
+    "facilities": []
+  },
+  "03a628eb-54c2-4fd6-a716-8c5ef730fdc5": {
+    "name": "I-1イノベーション総合研究棟",
+    "description": "講義棟",
+    "uuid": "03a628eb-54c2-4fd6-a716-8c5ef730fdc5",
+    "coordinates": {
+      "latitude": 137.40705127131866,
+      "longitude": 34.70190053948441
+    },
+    "facilities": []
+  },
+  "d9ee9823-b295-42cf-94ef-36f6baaa48bf": {
+    "name": "I-2イノベーション総合研究棟",
+    "description": "講義棟",
+    "uuid": "d9ee9823-b295-42cf-94ef-36f6baaa48bf",
+    "coordinates": {
+      "latitude": 137.4069838533889,
+      "longitude": 34.7023400830105
+    },
+    "facilities": []
+  },
+  "7bba4edd-fcca-4682-ac26-56bc7e4bd40a": {
+    "name": "教育研究基盤センター",
+    "description": "講義棟",
+    "uuid": "7bba4edd-fcca-4682-ac26-56bc7e4bd40a",
+    "coordinates": {
+      "latitude": 137.40757226233094,
+      "longitude": 34.70256679581992
+    },
+    "facilities": []
+  },
+  "96d7ffa0-af4f-40c3-b2a7-84f65cae01d8": {
+    "name": "実験実習工場",
+    "description": "講義棟",
+    "uuid": "96d7ffa0-af4f-40c3-b2a7-84f65cae01d8",
+    "coordinates": {
+      "latitude": 137.4077285910266,
+      "longitude": 34.702042297352165
+    },
+    "facilities": []
+  },
+  "9a06328c-39d4-4b53-b7e0-267f51201816": {
+    "name": "E0低層実験棟",
+    "description": "講義棟",
+    "uuid": "9a06328c-39d4-4b53-b7e0-267f51201816",
+    "coordinates": {
+      "latitude": 137.4082514190873,
+      "longitude": 34.702701102654586
+    },
+    "facilities": []
+  },
+  "0d52957b-a14e-48a5-a475-93c4ccc16d43": {
+    "name": "E1低層実験棟",
+    "description": "講義棟",
+    "uuid": "0d52957b-a14e-48a5-a475-93c4ccc16d43",
+    "coordinates": {
+      "latitude": 137.4086784793809,
+      "longitude": 34.70274752578406
+    },
+    "facilities": []
+  },
+  "49766272-533b-4448-a2ac-70827265b539": {
+    "name": "E2低層実験棟",
+    "description": "講義棟",
+    "uuid": "49766272-533b-4448-a2ac-70827265b539",
+    "coordinates": {
+      "latitude": 137.40828859836625,
+      "longitude": 34.70249836611106
+    },
+    "facilities": []
+  },
+  "569aa995-3e81-4b0e-b526-7be663581417": {
+    "name": "E3低層実験棟",
+    "description": "講義棟",
+    "uuid": "569aa995-3e81-4b0e-b526-7be663581417",
+    "coordinates": {
+      "latitude": 137.4086942651799,
+      "longitude": 34.70254826387874
+    },
+    "facilities": []
+  },
+  "d771c29a-c2c4-4a9a-ad3d-6babe3059802": {
+    "name": "E4低層実験棟",
+    "description": "講義棟",
+    "uuid": "d771c29a-c2c4-4a9a-ad3d-6babe3059802",
+    "coordinates": {
+      "latitude": 137.40906441002392,
+      "longitude": 34.70277979845052
+    },
+    "facilities": []
+  },
+  "fa20c61f-fa54-415a-a16a-d57dd8ce4f57": {
+    "name": "E5低層実験棟",
+    "description": "講義棟",
+    "uuid": "fa20c61f-fa54-415a-a16a-d57dd8ce4f57",
+    "coordinates": {
+      "latitude": 137.40911506617192,
+      "longitude": 34.70257269253601
+    },
+    "facilities": []
+  },
+  "771cccce-0d5e-4e42-9b79-c5a9647defd0": {
+    "name": "自然エネルギー実験棟",
+    "description": "講義棟",
+    "uuid": "771cccce-0d5e-4e42-9b79-c5a9647defd0",
+    "coordinates": {
+      "latitude": 137.40846283718517,
+      "longitude": 34.7031393009207
+    },
+    "facilities": []
+  },
+  "4b386d7c-2aa0-4fd2-9393-446d7949f638": {
+    "name": "インキュベーション棟",
+    "description": "講義棟",
+    "uuid": "4b386d7c-2aa0-4fd2-9393-446d7949f638",
+    "coordinates": {
+      "latitude": 137.40891241947693,
+      "longitude": 34.70315718744078
+    },
+    "facilities": []
+  },
+  "2913ac68-befe-4c2b-9161-a93f16e0b7a5": {
+    "name": "環境防災実験棟",
+    "description": "講義棟",
+    "uuid": "2913ac68-befe-4c2b-9161-a93f16e0b7a5",
+    "coordinates": {
+      "latitude": 137.40920932462657,
+      "longitude": 34.70319152965609
+    },
+    "facilities": []
+  },
+  "d17de55c-a57e-402e-b8f0-ee5eaecda4bc": {
+    "name": "ベンチャー・ビジネス・ラボラトリー",
+    "description": "講義棟",
+    "uuid": "d17de55c-a57e-402e-b8f0-ee5eaecda4bc",
+    "coordinates": {
+      "latitude": 137.4094764172916,
+      "longitude": 34.70321209994505
+    },
+    "facilities": []
+  },
+  "1e130182-943f-4acb-a75e-6965b3e7f7a2": {
+    "name": "次世代半導体・センサ科学研究所",
+    "description": "講義棟",
+    "uuid": "1e130182-943f-4acb-a75e-6965b3e7f7a2",
+    "coordinates": {
+      "latitude": 137.40949766099018,
+      "longitude": 34.70285575931241
+    },
+    "facilities": []
+  },
+  "28c6163b-89c4-4d3e-8d68-bf155f4e604b": {
+    "name": "サカキパーク",
+    "description": "講義棟",
+    "uuid": "28c6163b-89c4-4d3e-8d68-bf155f4e604b",
+    "coordinates": {
+      "latitude": 137.4077464857512,
+      "longitude": 34.70068097696118
+    },
+    "facilities": []
+  },
+  "3b833ef9-30e5-41dc-8c9a-bcb0ca95be7b": {
+    "name": "駐輪場",
+    "description": "講義棟",
+    "uuid": "3b833ef9-30e5-41dc-8c9a-bcb0ca95be7b",
+    "coordinates": {
+      "latitude": 137.40841719064062,
+      "longitude": 34.700783087470086
+    },
+    "facilities": []
+  },
+  "b5d0a3e9-596c-410e-9c2c-847cf586f977": {
+    "name": "北駐車場",
+    "description": "講義棟",
+    "uuid": "b5d0a3e9-596c-410e-9c2c-847cf586f977",
+    "coordinates": { "latitude": 0, "longitude": 0 },
+    "facilities": []
+  },
+  "9164f905-51e0-40d8-830b-d8dc209f71b3": {
+    "name": "東駐車場",
+    "description": "講義棟",
+    "uuid": "9164f905-51e0-40d8-830b-d8dc209f71b3",
+    "coordinates": { "latitude": 0, "longitude": 0 },
+    "facilities": []
+  },
+  "dd3058bc-b4e5-4a37-b5d3-bca96f07d6be": {
+    "name": "南駐車場",
+    "description": "講義棟",
+    "uuid": "dd3058bc-b4e5-4a37-b5d3-bca96f07d6be",
+    "coordinates": { "latitude": 0, "longitude": 0 },
+    "facilities": []
+  },
+  "58e87d41-01d3-4a07-a388-ddd06f704af5": {
+    "name": "福利施設",
+    "description": "講義棟",
+    "uuid": "58e87d41-01d3-4a07-a388-ddd06f704af5",
+    "coordinates": {
+      "latitude": 137.40891483651626,
+      "longitude": 34.700793933258524
+    },
+    "facilities": []
+  },
+  "e5f089ae-1619-4897-b2ed-5f93250d3521": {
+    "name": "情報メディア基盤センター・IT活用教育センター",
+    "description": "講義棟",
+    "uuid": "e5f089ae-1619-4897-b2ed-5f93250d3521",
+    "coordinates": {
+      "latitude": 137.40962847474964,
+      "longitude": 34.70085642612143
+    },
+    "facilities": []
+  },
+  "80c4b18f-08f9-4f98-9f36-b45826f28f97": {
+    "name": "付属図書館",
+    "description": "講義棟",
+    "uuid": "80c4b18f-08f9-4f98-9f36-b45826f28f97",
+    "coordinates": {
+      "latitude": 137.41012231911444,
+      "longitude": 34.70090451218557
+    },
+    "facilities": []
+  },
+  "6405220b-ff85-42d4-bdda-f0bdb41e3535": {
+    "name": "グローバルネットワーク推進センター",
+    "description": "講義棟",
+    "uuid": "6405220b-ff85-42d4-bdda-f0bdb41e3535",
+    "coordinates": {
+      "latitude": 137.41064440809635,
+      "longitude": 34.700914204987896
+    },
+    "facilities": []
+  },
+  "8e94d8d7-34ae-4a47-b0d9-736f096e04f9": {
+    "name": "事務局",
+    "description": "講義棟",
+    "uuid": "8e94d8d7-34ae-4a47-b0d9-736f096e04f9",
+    "coordinates": {
+      "latitude": 137.41116191154293,
+      "longitude": 34.70085468813218
+    },
+    "facilities": []
+  }
+}

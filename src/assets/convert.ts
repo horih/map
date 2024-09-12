@@ -1,5 +1,5 @@
-import fs from "node:fs/promises";
-import { v4 as uuidv4 } from "uuid";
+import fs from 'node:fs/promises';
+import { v4 as uuidv4 } from 'uuid';
 
 interface INPUT_Building {
   name: string;
@@ -25,7 +25,7 @@ interface OUTPUT_Building {
 function gen_output(
   input: INPUT_Building,
   uuid: string,
-  facilityUUIDs: string[]
+  facilityUUIDs: string[],
 ): OUTPUT_Building {
   return {
     name: input.name,
@@ -38,7 +38,7 @@ function gen_output(
 
 async function create_flat_map(
   input: INPUT_Building,
-  output: Map<string, OUTPUT_Building>
+  output: Map<string, OUTPUT_Building>,
 ): Promise<string> {
   const facilityUUIDs: string[] = [];
   for (const facility of input.facilities) {
@@ -53,7 +53,7 @@ async function create_flat_map(
 }
 
 async function create_map(
-  input: INPUT_Building[]
+  input: INPUT_Building[],
 ): Promise<Map<string, OUTPUT_Building>> {
   const output = new Map<string, OUTPUT_Building>();
   for (const building of input) {
@@ -62,7 +62,7 @@ async function create_map(
   return output;
 }
 
-const path = "src/assets/map.json";
+const path = 'src/assets/map.json';
 
 const map = await fs
   .readFile(path)
@@ -70,6 +70,6 @@ const map = await fs
   .then((res) => JSON.parse(res));
 
 await fs.writeFile(
-  "src/assets/result.json",
-  JSON.stringify(Object.fromEntries(await create_map(map.buildings)))
+  'src/assets/result.json',
+  JSON.stringify(Object.fromEntries(await create_map(map.buildings))),
 );
