@@ -54,7 +54,6 @@ export function SearchBar(props: SearchBarProps) {
       <form
         autoComplete="off"
         style={{ maxWidth: '28rem', marginLeft: 'auto', marginRight: 'auto' }}
-        onSubmit={(e) => e.preventDefault()}
       >
         <label
           style={{

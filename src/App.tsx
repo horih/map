@@ -26,8 +26,8 @@ const iconStyle = new Style({
 });
 
 function App() {
+  const buildings = Object.values(json);
   const [building, setBuilding] = useState<Building | null>(null);
-  const [buildings, _] = useState(Object.values(json));
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   // map.on("click", (event) => {
