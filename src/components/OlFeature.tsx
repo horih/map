@@ -1,4 +1,4 @@
-import type { Feature, MapBrowserEvent } from 'ol';
+import type { Feature, Map, MapBrowserEvent } from 'ol';
 import type { FeatureLike } from 'ol/Feature';
 import VectorLayer from 'ol/layer/Vector';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import { useOlMap } from './OlMapContext';
 
 interface Props {
   builder: () => Feature;
-  onClick?: () => void;
+  onClick?: (map: Map) => void;
 }
 
 export function OlFeature({ builder, onClick }: Props) {
@@ -23,7 +23,7 @@ export function OlFeature({ builder, onClick }: Props) {
         return feature;
       });
       if (f === feature && onClick) {
-        onClick();
+        onClick(map);
       }
     };
     map.on('click', listener);
