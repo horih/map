@@ -1,28 +1,28 @@
 import { Map, MapBrowserEvent } from "ol";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { OlMapContext } from "./OlMapContext";
 
 import "ol/ol.css";
 
 interface Props {
-  map?: Map;
+  builder: () => Map;
   onClick?: () => void;
 }
 
 export function OlMap({
-  map = new Map(),
+  builder = () => new Map(),
   onClick,
   children,
 }: React.PropsWithChildren<Props>) {
   const container = useRef<HTMLDivElement>(null);
+  const [map, setMap] = useState(builder)
 
   useEffect(() => {
+    const map = builder();
     if (container.current) {
       map.setTarget(container.current);
     }
-  }, [map]);
 
-  useEffect(() => {
     const listener = (e: MapBrowserEvent<UIEvent>) => {
       const f = map.forEachFeatureAtPixel(e.pixel, (feature) => {
         return feature;
@@ -33,10 +33,13 @@ export function OlMap({
     };
     map.on("click", listener);
 
+    setMap(map)
+
     return () => {
       map.un("click", listener);
-    };
-  }, [map, onClick]);
+      map.dispose();
+    }
+  }, [builder, onClick]);
 
   return (
     <OlMapContext.Provider value={map}>

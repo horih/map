@@ -1,20 +1,22 @@
 import { Feature, MapBrowserEvent } from "ol";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useOlMap } from "./OlMapContext";
 import { useOlLayer } from "./OlLayerContext";
 import VectorLayer from "ol/layer/Vector";
 import { FeatureLike } from "ol/Feature";
 
 interface Props {
-  feature: Feature;
+  builder: ()=>Feature;
   onClick?: () => void;
 }
 
-export function OlFeature({ feature, onClick }: Props) {
+export function OlFeature({ builder, onClick }: Props) {
   const map = useOlMap();
   const layer = useOlLayer(VectorLayer<FeatureLike>);
+  const [feature, setFeature] = useState(builder)
 
   useEffect(() => {
+    const feature = builder();
     layer.getSource()?.addFeature(feature);
     const listener = (e: MapBrowserEvent<UIEvent>) => {
       const f = map.forEachFeatureAtPixel(e.pixel, (feature) => {
@@ -25,12 +27,13 @@ export function OlFeature({ feature, onClick }: Props) {
       }
     };
     map.on("click", listener);
+    setFeature(feature)
 
     return () => {
       map.un("click", listener);
       layer.getSource()?.removeFeature(feature);
     };
-  }, [feature, map, onClick, layer]);
+  }, [onClick, layer, builder, map]);
 
   return null;
 }

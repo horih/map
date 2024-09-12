@@ -12,17 +12,7 @@ import { useState } from "react";
 import { transform } from "ol/proj";
 import json from "./assets/map.json";
 
-const map = new Map({
-  view: new View({
-    center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
-    zoom: 17, //ズームレベル
-    minZoom: 16, //最小ズームレベル
-    maxZoom: 19,
-  }),
-});
 
-const tile = new Tile({ source: new OSM() });
-const vector = new VectorLayer({ source: new VectorSource() });
 
 function App() {
   const [building, setBuilding] = useState<Building | null>(null);
@@ -46,17 +36,24 @@ function App() {
       </div>
       <div className="relative h-full">
         <OlMap
-          map={map}
+          builder={()=>new Map({
+            view: new View({
+              center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
+              zoom: 17, //ズームレベル
+              minZoom: 16, //最小ズームレベル
+              maxZoom: 19,
+            }),
+          })}
           onClick={() => {
             // alert("feature以外をクリック");
           }}
         >
-          <OlLayer layer={tile}></OlLayer>
-          <OlLayer layer={vector}>
+          <OlLayer builder={()=> new Tile({ source: new OSM() })}></OlLayer>
+          <OlLayer builder={()=>new VectorLayer({ source: new VectorSource() })}>
             {buildings.map((building, index) => (
               <OlFeature
                 key={index}
-                feature={
+                builder={()=>
                   new Feature({
                     geometry: new Point([
                       building.position.x,
