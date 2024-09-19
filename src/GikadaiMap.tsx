@@ -100,9 +100,13 @@ export const GikadaiMap = forwardRef(function MyInput(
   ref
 ) {
   const container = useRef<HTMLDivElement>(null);
-  //const tracking = useRef<boolean>(false);
-
   const mapref = useRef<OlMap>();
+  // geolocation.on("change:position", () => {
+  //   const coordinates = geolocation.getPosition();
+  //   currentPositionFeature.setGeometry(
+  //     coordinates ? new Point(coordinates) : undefined
+  //   );
+  // });
 
   useEffect(() => {
     const map = new OlMap({
@@ -210,7 +214,7 @@ export const GikadaiMap = forwardRef(function MyInput(
         }),
         new VectorLayer({
           source: new VectorSource({
-            features: [/* accuracyFeature, */ currentPositionFeature],
+            features: [currentPositionFeature],
           }),
         }),
       ],
