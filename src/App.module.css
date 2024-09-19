@@ -14,5 +14,17 @@
 }
 
 .currentLocation:active {
-  background-color: #eeeeee;
+  background-color: #606060;
+}
+
+.slide {
+  position: fixed;
+  bottom: -45%;
+  width: 100%;
+  height: 45%;
+  transition: bottom 0.25s;
+}
+
+.slideAnim {
+  bottom: 0;
 }
