@@ -75,7 +75,7 @@ currentPositionFeature.setStyle(
     image: new Circle({
       radius: 12,
       fill: new Fill({
-        color: '#3399CC',
+        color: '#3b82f6',
       }),
       stroke: new Stroke({
         color: '#fff',

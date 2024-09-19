@@ -66,47 +66,57 @@ function App() {
       {building && (
         <div
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '33.3333%',
-            backgroundColor: '#ffffff',
-            boxShadow:
-              '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-            zIndex: 20,
-            padding: '1rem',
-            overflowY: 'auto',
+            position: 'fixed',
+            bottom: 0,
+            width: '100%',
+            height: '45%',
           }}
         >
-          <h2
+          <div
             style={{
-              fontSize: '1.25rem', // text-xl
-              fontWeight: 'bold', // font-bold
-              marginBottom: '1rem', // mb-4
+              maxWidth: '800px',
+              height: '100%',
+              width: '100%',
+              backgroundColor: '#ffffff',
+              borderRadius: '1rem',
+              padding: '1rem',
+              margin: '0 auto',
+              border: 'solid 1px #aaa',
             }}
           >
-            {building?.name}
-          </h2>
-          {building?.children.map((child) => (
-            <div key={child.name}>
-              <p>{child.name}</p>
-              <p>{child.description}</p>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => setBuilding(undefined)}
-            style={{
-              marginTop: '1rem', // mt-4
-              padding: '0.5rem', // p-2
-              backgroundColor: '#ef4444', // bg-red-500
-              color: '#ffffff', // text-white
-              borderRadius: '0.25rem', // rounded
-            }}
-          >
-            Close
-          </button>
+            <h2
+              style={{
+                fontSize: '1.25rem', // text-xl
+                fontWeight: 'bold', // font-bold
+                marginTop: 0,
+                marginBottom: '1rem', // mb-4
+              }}
+            >
+              {building?.name}
+            </h2>
+            {building?.children.map((child) => (
+              <div
+                key={child.name}
+                style={{ borderRadius: '0.8rem', border: 'solid 1px #aaa' }}
+              >
+                <p>{child.name}</p>
+                {/* <p>{child.description}</p> */}
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => setBuilding(undefined)}
+              style={{
+                marginTop: '1rem', // mt-4
+                padding: '0.5rem', // p-2
+                backgroundColor: '#ef4444', // bg-red-500
+                color: '#ffffff', // text-white
+                borderRadius: '0.25rem', // rounded
+              }}
+            >
+              Close
+            </button>
+          </div>
         </div>
       )}
     </>
