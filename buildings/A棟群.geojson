@@ -2,11 +2,11 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.4102745132446, 34.70193792515184]
+    "coordinates": [137.4107966501511, 34.70147952212507]
   },
   "properties": {
-    "id": 2,
-    "name": "A1講義棟",
+    "id": "A",
+    "name": "A棟",
     "group": "A棟群",
     "children": []
   }
