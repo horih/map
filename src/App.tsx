@@ -1,8 +1,8 @@
 import { IconCurrentLocation } from '@tabler/icons-react';
 import { Geolocation } from 'ol';
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { GikadaiMap } from './GikadaiMap';
-import type {} from './components/SearchBar';
+import type { FeatureLike } from 'ol/Feature';
 
 import classes from './App.module.css';
 
@@ -26,19 +26,23 @@ interface Building {
 
 function App() {
   const [building, setBuilding] = useState<Building>();
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
 
-  console.log(building);
-
-  return (
-    <>
+  const gikadaiMap = useMemo(
+    () => (
       <GikadaiMap
-        onClick={(feature) => {
-          console.log(feature);
-          setBuilding(feature.getProperties() as Building);
+        onClick={(feature: FeatureLike) => {
+          if (feature.get('children'))
+            setBuilding(feature.getProperties() as Building);
         }}
         geolocation={geolocation}
       />
+    ),
+    [],
+  );
+
+  return (
+    <>
+      {gikadaiMap}
       <button
         type="button"
         className={classes.currentLocation}

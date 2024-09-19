@@ -24,16 +24,18 @@ const GeoJSON = z.object({
   }),
 });
 
-const features = await Promise.all(
-  (await glob(join(import.meta.dirname, 'buildings/*.geojson'))).map(
-    async (path) => {
+const features = (
+  await Promise.all(
+    (
+      await glob(join(import.meta.dirname, 'buildings/*.geojson'))
+    ).map(async (path) => {
       const geojson = await readFile(path)
         .then((res) => res.toString())
         .then((res) => JSON.parse(res));
       return GeoJSON.parse(geojson);
-    },
-  ),
-);
+    }),
+  )
+).filter((geojson) => geojson.properties.children.length > 0);
 
 await writeFile(
   join(import.meta.dirname, 'public/buildings.geojson'),

@@ -195,7 +195,7 @@ export function GikadaiMap({
       const feature = map.forEachFeatureAtPixel(e.pixel, (feature) => {
         return feature;
       });
-      if (feature !== void 0) {
+      if (feature) {
         onClick(feature);
       }
     });
