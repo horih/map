@@ -100,20 +100,16 @@ export const GikadaiMap = forwardRef(function MyInput(
   ref
 ) {
   const container = useRef<HTMLDivElement>(null);
+  //const tracking = useRef<boolean>(false);
+
   const mapref = useRef<OlMap>();
-  // geolocation.on("change:position", () => {
-  //   const coordinates = geolocation.getPosition();
-  //   currentPositionFeature.setGeometry(
-  //     coordinates ? new Point(coordinates) : undefined
-  //   );
-  // });
 
   useEffect(() => {
     const map = new OlMap({
       controls: [],
       view: new View({
         center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
-        zoom: 18, //ズームレベル
+        zoom: 17, //ズームレベル
         minZoom: 16, //最小ズームレベル
         maxZoom: 19,
       }),
@@ -214,7 +210,7 @@ export const GikadaiMap = forwardRef(function MyInput(
         }),
         new VectorLayer({
           source: new VectorSource({
-            features: [currentPositionFeature],
+            features: [/* accuracyFeature, */ currentPositionFeature],
           }),
         }),
       ],

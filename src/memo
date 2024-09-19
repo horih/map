@@ -1,0 +1,52 @@
+style: (feature, resolution) => {
+            const zoom = map.getView().getZoomForResolution(resolution);
+            if ((zoom ?? 18) <= 18 && typeof feature.get("id") === "string") {
+              return new Style({
+                image: new RegularShape({
+                  fill: new Fill({
+                    color: getBuildingBgColor(feature.get("group")),
+                  }),
+                  stroke: new Stroke({
+                    color: getBuildingBorderColor(feature.get("group")),
+                    width: 2,
+                  }),
+                  points: 4,
+                  radius: 24,
+                  angle: Math.PI / 4,
+                }),
+                text: new Text({
+                  text: feature.get("id").toString(),
+                  fill: new Fill({
+                    color: getBuildingTextColor(feature.get("group")),
+                  }),
+                  font: "bold 20px sans-serif",
+                }),
+              });
+            } else if (
+              (zoom ?? 18) > 18 &&
+              typeof feature.get("id") === "number"
+            ) {
+              return new Style({
+                image: new RegularShape({
+                  fill: new Fill({
+                    color: getBuildingBgColor(feature.get("group")),
+                  }),
+                  stroke: new Stroke({
+                    color: getBuildingBorderColor(feature.get("group")),
+                    width: 2,
+                  }),
+                  points: 4,
+                  radius: 24,
+                  angle: Math.PI / 4,
+                }),
+                text: new Text({
+                  text: feature.get("id").toString(),
+                  fill: new Fill({
+                    color: getBuildingTextColor(feature.get("group")),
+                  }),
+                  font: "bold 20px sans-serif",
+                }),
+              });
+            }
+          },
+        }),

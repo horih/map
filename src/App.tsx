@@ -39,7 +39,6 @@ function App() {
   const tracking = useRef<boolean>(false);
 
   const mapref = useRef<React.MutableRefObject<OlMap | undefined>>();
-
   const [focus_padding, _setPadding] = useState(window.innerHeight * 0.45);
 
   useEffect(() => {
