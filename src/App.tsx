@@ -1,8 +1,9 @@
 import { IconCurrentLocation } from '@tabler/icons-react';
 import { Geolocation } from 'ol';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { GikadaiMap } from './GikadaiMap';
-import type { SimpleGeometry } from 'ol/geom';
+import { Point, type SimpleGeometry } from 'ol/geom';
+import { Map as OlMap } from 'ol';
 
 import classes from './App.module.css';
 
@@ -26,6 +27,18 @@ interface Building {
 
 function App() {
   const [building, setBuilding] = useState<Building>();
+  /* const [currentPosition, setCurrentPosition] = useState();
+
+  geolocation.on('change:position', () => {
+    const coordinates = geolocation.getPosition();
+    currentPositionFeature.setGeometry(
+      coordinates ? new Point(coordinates) : undefined,
+    );
+  }); */
+
+  const tracking = useRef<boolean>(false);
+
+  const mapref = useRef<React.MutableRefObject<OlMap | undefined>>();
 
   const gikadaiMap = useMemo(
     () => (
@@ -44,6 +57,8 @@ function App() {
           }
         }}
         geolocation={geolocation}
+        tracking={tracking}
+        ref={mapref}
       />
     ),
     [],
@@ -58,6 +73,13 @@ function App() {
         onClick={() => {
           if (!geolocation.getTracking()) {
             geolocation.setTracking(true);
+          }
+          tracking.current = true;
+          const coordinates = geolocation.getPosition();
+          if (tracking.current && coordinates) {
+            mapref.current?.current
+              ?.getView()
+              .fit(new Point(coordinates), { duration: 500 });
           }
         }}
       >

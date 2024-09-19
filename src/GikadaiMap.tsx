@@ -11,7 +11,7 @@ import { Vector as VectorLayer } from 'ol/layer';
 import { transform } from 'ol/proj';
 import { Vector as VectorSource } from 'ol/source';
 import { Circle, Fill, RegularShape, Stroke, Style, Text } from 'ol/style';
-import { useEffect, useRef } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 
 import streets from './assets/78.json';
 import buildingspolygon from './assets/546.json';
@@ -87,25 +87,22 @@ currentPositionFeature.setStyle(
 
 const accuracyFeature = new Feature();
 
-export function GikadaiMap({
-  onClick,
-  geolocation,
-}: {
-  onClick: (event: MapBrowserEvent<UIEvent>) => void;
-  geolocation: Geolocation;
-}) {
+export const GikadaiMap = forwardRef(function MyInput(
+  {
+    onClick,
+    geolocation,
+    tracking,
+  }: {
+    onClick: (event: MapBrowserEvent<UIEvent>) => void;
+    geolocation: Geolocation;
+    tracking: React.MutableRefObject<boolean>;
+  },
+  ref,
+) {
   const container = useRef<HTMLDivElement>(null);
+  //const tracking = useRef<boolean>(false);
 
-  geolocation.on('change:position', () => {
-    const coordinates = geolocation.getPosition();
-    currentPositionFeature.setGeometry(
-      coordinates ? new Point(coordinates) : undefined,
-    );
-  });
-
-  geolocation.on('change:accuracyGeometry', () => {
-    accuracyFeature.setGeometry(geolocation.getAccuracyGeometry() ?? undefined);
-  });
+  const mapref = useRef<OlMap>();
 
   useEffect(() => {
     const map = new OlMap({
@@ -194,6 +191,33 @@ export function GikadaiMap({
       map.setTarget(container.current);
     }
 
+    geolocation.on('change:position', () => {
+      const coordinates = geolocation.getPosition();
+      currentPositionFeature.setGeometry(
+        coordinates ? new Point(coordinates) : undefined,
+      );
+
+      if (tracking.current && coordinates) {
+        map.getView().fit(new Point(coordinates), { duration: 500 });
+      }
+    });
+
+    geolocation.on('change:accuracyGeometry', () => {
+      accuracyFeature.setGeometry(
+        geolocation.getAccuracyGeometry() ?? undefined,
+      );
+    });
+
+    map.on('pointerdrag', (e) => {
+      console.log(e);
+      tracking.current = false;
+    });
+
+    map.on('click', (e) => {
+      console.log(e);
+      tracking.current = false;
+    });
+
     map.on('click', (e: MapBrowserEvent<UIEvent>) => {
       console.log(
         new Point(e.coordinate)
@@ -201,17 +225,21 @@ export function GikadaiMap({
           .getCoordinates(),
       );
       /* console.log(e.)
-      const feature = map.forEachFeatureAtPixel(e.pixel, (feature) => {
-        return feature;
-      }); */
+        const feature = map.forEachFeatureAtPixel(e.pixel, (feature) => {
+          return feature;
+        }); */
 
       onClick(e);
     });
 
+    mapref.current = map;
+
     return () => {
       map.dispose();
     };
-  }, [onClick]);
+  }, [onClick, geolocation, tracking]);
+
+  useImperativeHandle(ref, () => mapref, []);
 
   return (
     <div
@@ -222,4 +250,4 @@ export function GikadaiMap({
       ref={container}
     />
   );
-}
+});
