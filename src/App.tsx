@@ -1,8 +1,8 @@
 import { IconCurrentLocation } from '@tabler/icons-react';
 import { Geolocation } from 'ol';
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { GikadaiMap } from './GikadaiMap';
-import type { FeatureLike } from 'ol/Feature';
+import type { SimpleGeometry } from 'ol/geom';
 
 import classes from './App.module.css';
 
@@ -30,9 +30,18 @@ function App() {
   const gikadaiMap = useMemo(
     () => (
       <GikadaiMap
-        onClick={(feature: FeatureLike) => {
-          if (feature.get('children'))
+        onClick={(event) => {
+          const feature = event.map.forEachFeatureAtPixel(
+            event.pixel,
+            (feature) => {
+              return feature;
+            },
+          );
+          if (feature?.get('children')) {
+            const geometry = feature.getGeometry() as SimpleGeometry;
+            event.map.getView().fit(geometry, { duration: 500 });
             setBuilding(feature.getProperties() as Building);
+          }
         }}
         geolocation={geolocation}
       />

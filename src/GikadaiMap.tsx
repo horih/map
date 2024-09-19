@@ -5,7 +5,6 @@ import {
   Map as OlMap,
   View,
 } from 'ol';
-import type { FeatureLike } from 'ol/Feature';
 import { GeoJSON } from 'ol/format';
 import { Point } from 'ol/geom';
 import { Vector as VectorLayer } from 'ol/layer';
@@ -89,7 +88,10 @@ currentPositionFeature.setStyle(
 export function GikadaiMap({
   onClick,
   geolocation,
-}: { onClick: (feature: FeatureLike) => void; geolocation: Geolocation }) {
+}: {
+  onClick: (event: MapBrowserEvent<UIEvent>) => void;
+  geolocation: Geolocation;
+}) {
   const container = useRef<HTMLDivElement>(null);
 
   geolocation.on('change:position', () => {
@@ -192,12 +194,12 @@ export function GikadaiMap({
           .transform('EPSG:3857', 'EPSG:4326')
           .getCoordinates(),
       );
+      /* console.log(e.)
       const feature = map.forEachFeatureAtPixel(e.pixel, (feature) => {
         return feature;
-      });
-      if (feature) {
-        onClick(feature);
-      }
+      }); */
+
+      onClick(e);
     });
 
     return () => {
