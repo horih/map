@@ -35,7 +35,7 @@ const features = (
       return GeoJSON.parse(geojson);
     }),
   )
-).filter((geojson) => geojson.properties.children.length > 0);
+).filter((feature) => feature.properties.children.length > 0);
 
 await writeFile(
   join(import.meta.dirname, 'public/buildings.geojson'),
@@ -44,14 +44,3 @@ await writeFile(
     features,
   }),
 );
-
-/* const map = await fs
-  .readFile(path)
-  .then((res) => res.toString())
-  .then((res) => JSON.parse(res));
-
-await fs.writeFile(
-  'src/assets/result.json',
-  JSON.stringify(Object.fromEntries(await create_map(map.buildings))),
-);
- */
