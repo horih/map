@@ -2,7 +2,7 @@ import { IconCurrentLocation } from '@tabler/icons-react';
 import { Geolocation } from 'ol';
 import { useState } from 'react';
 import { GikadaiMap } from './GikadaiMap';
-import type { Building } from './components/SearchBar';
+import type {} from './components/SearchBar';
 
 import classes from './App.module.css';
 
@@ -13,15 +13,29 @@ const geolocation = new Geolocation({
   projection: 'EPSG:3857',
 });
 
+interface Children {
+  name: string;
+  description: string;
+}
+
+interface Building {
+  id: number;
+  name: string;
+  children: Children[];
+}
+
 function App() {
-  const [building] = useState<Building | null>(null);
+  const [building, setBuilding] = useState<Building>();
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+
+  console.log(building);
 
   return (
     <>
       <GikadaiMap
         onClick={(feature) => {
           console.log(feature);
+          setBuilding(feature.getProperties() as Building);
         }}
         geolocation={geolocation}
       />
@@ -36,7 +50,7 @@ function App() {
       >
         <IconCurrentLocation size={32} />
       </button>
-      {isPanelOpen && (
+      {building && (
         <div
           style={{
             position: 'absolute',
@@ -61,10 +75,15 @@ function App() {
           >
             {building?.name}
           </h2>
-          <p>{building?.description}</p>
+          {building?.children.map((child) => (
+            <div key={child.name}>
+              <p>{child.name}</p>
+              <p>{child.description}</p>
+            </div>
+          ))}
           <button
             type="button"
-            onClick={() => setIsPanelOpen(false)}
+            onClick={() => setBuilding(undefined)}
             style={{
               marginTop: '1rem', // mt-4
               padding: '0.5rem', // p-2

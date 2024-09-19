@@ -11,6 +11,11 @@
     "id": 1,
     "name": "A講義棟",
     "group": "A棟群",
-    "children": []
+    "children": [
+      {
+        "name": "テスト団体",
+        "description": "テスト概要"
+      }
+    ]
   }
 }

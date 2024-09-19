@@ -17,7 +17,7 @@ import { useEffect, useRef } from 'react';
 import streets from './assets/78.json';
 import buildingspolygon from './assets/546.json';
 
-function getBuildingColor(group: string) {
+function getBuildingBgColor(group: string) {
   switch (group) {
     case 'A棟群':
       return '#A12E2A';
@@ -33,6 +33,38 @@ function getBuildingColor(group: string) {
       return '#814A8C';
     case 'G棟群':
       return '#8A8A8A';
+    default:
+      return 'gray';
+  }
+}
+
+function getBuildingTextColor(group: string) {
+  switch (group) {
+    case 'A棟群':
+    case 'B棟群':
+    case 'C棟群':
+    case 'D棟群':
+    case 'F棟群':
+    case 'G棟群':
+      return '#FFFFFF';
+    case 'E棟群':
+      return '#000000';
+    default:
+      return 'gray';
+  }
+}
+
+function getBuildingBorderColor(group: string) {
+  switch (group) {
+    case 'A棟群':
+    case 'B棟群':
+    case 'C棟群':
+    case 'D棟群':
+    case 'F棟群':
+    case 'G棟群':
+      return '#FFFFFF';
+    case 'E棟群':
+      return '#000000';
     default:
       return 'gray';
   }
@@ -123,10 +155,10 @@ export function GikadaiMap({
             return new Style({
               image: new RegularShape({
                 fill: new Fill({
-                  color: getBuildingColor(feature.get('group')),
+                  color: getBuildingBgColor(feature.get('group')),
                 }),
                 stroke: new Stroke({
-                  color: '#fff',
+                  color: getBuildingBorderColor(feature.get('group')),
                   width: 2,
                 }),
                 points: 4,
@@ -136,7 +168,7 @@ export function GikadaiMap({
               text: new Text({
                 text: feature.get('id').toString(),
                 fill: new Fill({
-                  color: '#000000',
+                  color: getBuildingTextColor(feature.get('group')),
                 }),
                 font: 'bold 20px sans-serif',
               }),
