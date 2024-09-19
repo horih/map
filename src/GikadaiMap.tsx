@@ -15,8 +15,28 @@ import { Circle, Fill, RegularShape, Stroke, Style, Text } from 'ol/style';
 import { useEffect, useRef } from 'react';
 
 import streets from './assets/78.json';
-import buildings from './assets/546.json';
-import json from './assets/result.json';
+import buildingspolygon from './assets/546.json';
+
+function getBuildingColor(group: string) {
+  switch (group) {
+    case 'A棟群':
+      return '#A12E2A';
+    case 'B棟群':
+      return '#D88535';
+    case 'C棟群':
+      return '#377641';
+    case 'D棟群':
+      return '#1E3368';
+    case 'E棟群':
+      return '#FFFFFF';
+    case 'F棟群':
+      return '#814A8C';
+    case 'G棟群':
+      return '#8A8A8A';
+    default:
+      return 'gray';
+  }
+}
 
 const currentPositionFeature = new Feature();
 currentPositionFeature.setStyle(
@@ -38,7 +58,6 @@ export function GikadaiMap({
   onClick,
   geolocation,
 }: { onClick: (feature: FeatureLike) => void; geolocation: Geolocation }) {
-  const buildingsaaa = Object.values(json);
   const container = useRef<HTMLDivElement>(null);
 
   geolocation.on('change:position', () => {
@@ -77,10 +96,12 @@ export function GikadaiMap({
         }),
         new VectorLayer({
           source: new VectorSource({
-            features: new GeoJSON().readFeatures(buildings).map((feature) => {
-              feature.getGeometry()?.transform('EPSG:4326', 'EPSG:3857');
-              return feature;
-            }),
+            features: new GeoJSON()
+              .readFeatures(buildingspolygon)
+              .map((feature) => {
+                feature.getGeometry()?.transform('EPSG:4326', 'EPSG:3857');
+                return feature;
+              }),
           }),
           style: new Style({
             stroke: new Stroke({
@@ -95,40 +116,32 @@ export function GikadaiMap({
 
         new VectorLayer({
           source: new VectorSource({
-            features: buildingsaaa.map((unit) => {
-              const feature = new Feature({
-                geometry: new Point([
-                  unit.coordinates.latitude,
-                  unit.coordinates.longitude,
-                ]).transform('EPSG:4326', 'EPSG:3857'),
-              });
-
-              feature.setStyle(
-                new Style({
-                  image: new RegularShape({
-                    fill: new Fill({
-                      color: '#3399CC',
-                    }),
-                    stroke: new Stroke({
-                      color: '#fff',
-                      width: 2,
-                    }),
-                    points: 4,
-                    radius: 24,
-                    angle: Math.PI / 4,
-                  }),
-                  text: new Text({
-                    text: '99',
-                    fill: new Fill({
-                      color: '#000000',
-                    }),
-                    font: 'bold 20px sans-serif',
-                  }),
-                }),
-              );
-              return feature;
-            }),
+            url: 'buildings.geojson',
+            format: new GeoJSON(),
           }),
+          style: (feature) => {
+            return new Style({
+              image: new RegularShape({
+                fill: new Fill({
+                  color: getBuildingColor(feature.get('group')),
+                }),
+                stroke: new Stroke({
+                  color: '#fff',
+                  width: 2,
+                }),
+                points: 4,
+                radius: 24,
+                angle: Math.PI / 4,
+              }),
+              text: new Text({
+                text: feature.get('id').toString(),
+                fill: new Fill({
+                  color: '#000000',
+                }),
+                font: 'bold 20px sans-serif',
+              }),
+            });
+          },
         }),
         new VectorLayer({
           source: new VectorSource({
@@ -142,6 +155,11 @@ export function GikadaiMap({
     }
 
     map.on('click', (e: MapBrowserEvent<UIEvent>) => {
+      console.log(
+        new Point(e.coordinate)
+          .transform('EPSG:3857', 'EPSG:4326')
+          .getCoordinates(),
+      );
       const feature = map.forEachFeatureAtPixel(e.pixel, (feature) => {
         return feature;
       });
@@ -153,7 +171,7 @@ export function GikadaiMap({
     return () => {
       map.dispose();
     };
-  }, [onClick, buildingsaaa.map]);
+  }, [onClick]);
 
   return (
     <div

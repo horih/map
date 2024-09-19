@@ -1,1 +1,16 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40871332103094,34.70145787677892]},"properties":{"name":"D1学生実験棟","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.40871332103094,
+      34.70145787677892
+    ]
+  },
+  "properties": {
+    "id": 13,
+    "name": "D1学生実験棟",
+    "group": "D棟群",
+    "children": []
+  }
+}

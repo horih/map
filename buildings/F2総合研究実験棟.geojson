@@ -1,1 +1,16 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40784438808882,34.7017026292824]},"properties":{"name":"F2総合研究実験棟","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.40784438808882,
+      34.7017026292824
+    ]
+  },
+  "properties": {
+    "id": 25,
+    "name": "F2総合研究実験棟",
+    "group": "F棟群",
+    "children": []
+  }
+}

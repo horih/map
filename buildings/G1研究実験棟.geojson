@@ -1,1 +1,16 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40749118804172,34.701387363570134]},"properties":{"name":"G1研究実験棟","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.40749118804172,
+      34.701387363570134
+    ]
+  },
+  "properties": {
+    "id": 27,
+    "name": "G1研究実験棟",
+    "group": "G棟群",
+    "children": []
+  }
+}

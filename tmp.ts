@@ -18,6 +18,7 @@ for (const building of Object.values(resultJson)) {
         ],
       },
       properties: {
+        id: 0,
         name: building.name,
         group: '',
         children: [],
