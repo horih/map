@@ -182,7 +182,7 @@ export const GikadaiMap = forwardRef(function MyInput(
         }),
         new VectorLayer({
           source: new VectorSource({
-            features: [accuracyFeature, currentPositionFeature],
+            features: [/* accuracyFeature, */ currentPositionFeature],
           }),
         }),
       ],
