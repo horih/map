@@ -1,0 +1,16 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.40919805357822,
+      34.70132965904622
+    ]
+  },
+  "properties": {
+    "id": 8,
+    "name": "C研究棟",
+    "group": "C棟群",
+    "children": []
+  }
+}

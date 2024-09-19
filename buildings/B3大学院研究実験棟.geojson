@@ -1,0 +1,16 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.40994063238796,
+      34.701858013113224
+    ]
+  },
+  "properties": {
+    "id": 7,
+    "name": "B3大学院研究実験棟",
+    "group": "B棟群",
+    "children": []
+  }
+}

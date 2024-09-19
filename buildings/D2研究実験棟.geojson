@@ -1,0 +1,16 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.40830027909792,
+      34.70143886086923
+    ]
+  },
+  "properties": {
+    "id": 14,
+    "name": "D2研究実験棟",
+    "group": "D棟群",
+    "children": []
+  }
+}

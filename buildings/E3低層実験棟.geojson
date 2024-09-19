@@ -1,0 +1,16 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      137.4086942651799,
+      34.70254826387874
+    ]
+  },
+  "properties": {
+    "id": 20,
+    "name": "E3低層実験棟",
+    "group": "E棟群",
+    "children": []
+  }
+}
