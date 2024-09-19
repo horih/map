@@ -208,7 +208,7 @@ export function GikadaiMap({
   return (
     <div
       style={{
-        width: '100dvh',
+        width: '100dvw',
         height: '100dvh',
       }}
       ref={container}
