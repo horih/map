@@ -85,6 +85,8 @@ currentPositionFeature.setStyle(
   }),
 );
 
+const accuracyFeature = new Feature();
+
 export function GikadaiMap({
   onClick,
   geolocation,
@@ -99,6 +101,10 @@ export function GikadaiMap({
     currentPositionFeature.setGeometry(
       coordinates ? new Point(coordinates) : undefined,
     );
+  });
+
+  geolocation.on('change:accuracyGeometry', () => {
+    accuracyFeature.setGeometry(geolocation.getAccuracyGeometry() ?? undefined);
   });
 
   useEffect(() => {
@@ -179,7 +185,7 @@ export function GikadaiMap({
         }),
         new VectorLayer({
           source: new VectorSource({
-            features: [currentPositionFeature],
+            features: [accuracyFeature, currentPositionFeature],
           }),
         }),
       ],
