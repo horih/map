@@ -3,11 +3,7 @@ import { IconMapPin, IconX } from "@tabler/icons-react";
 import { Children } from "./Children";
 import { Building } from "./Building";
 import classes from "./Building.module.css";
-import {
-  getBuildingBgColor,
-  getBuildingBorderColor,
-  getBuildingTextColor,
-} from "./BuildingColor";
+import { getBuildingBgColor } from "./BuildingColor";
 
 interface ChildSheetProps {
   child: Children;
