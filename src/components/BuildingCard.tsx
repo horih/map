@@ -142,7 +142,7 @@ const BuildingCard: React.FC<BuildingCardProps> = ({
       <div
         style={{
           overflow: "auto",
-          height: "100%",
+          height: "calc(100% - 4rem)",
           width: "100%",
           msOverflowStyle: "none",
           scrollbarWidth: "none",

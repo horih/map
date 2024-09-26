@@ -4,13 +4,12 @@ import { useMemo, useRef, useState, useEffect } from "react";
 import { GikadaiMap } from "./GikadaiMap";
 import { Point, type SimpleGeometry } from "ol/geom";
 import { Map as OlMap } from "ol";
-
+import BuildingCard from "./components/BuildingCard";
 import GroupCard from "./components/GroupCard";
 import { Children } from "./components/Children";
 import { Building } from "./components/Building";
 
 import classes from "./App.module.css";
-import BuildingCard from "./components/BuildingCard";
 
 const geolocation = new Geolocation({
   trackingOptions: {
@@ -33,7 +32,7 @@ function App() {
 
   const tracking = useRef<boolean>(false);
   const mapref = useRef<React.MutableRefObject<OlMap | undefined>>();
-  const [focus_padding, setPadding] = useState(0);
+  const [focus_padding, setPadding] = useState(window.innerHeight * 0.45);
 
   useEffect(() => {
     const updatePadding = () => {
