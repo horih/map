@@ -1,6 +1,7 @@
 import React from "react";
-import { IconWorld, IconMapPin, IconX } from "@tabler/icons-react";
+import { IconWorld, IconMapPin, IconClock, IconX } from "@tabler/icons-react";
 import { Children } from "./Children";
+import classes from "./GroupCard.module.css";
 
 type GroupCardProps = {
   group: Children | undefined;
@@ -62,19 +63,16 @@ const GroupCard: React.FC<GroupCardProps> = ({ group, setGroup }) => {
           </h2>
           <p
             style={{
-              fontSize: "1.5rem",
+              fontSize: "1.0rem",
               color: "#333",
               margin: 0,
               display: "flex",
               justifyContent: "flex-end",
               alignItems: "center",
+              flexWrap: "wrap",
             }}
           >
-            <IconWorld
-              size={"1.5rem"}
-              strokeWidth={2}
-              style={{ margin: "0 0.5rem 0 1rem" }}
-            />
+            <IconWorld strokeWidth={2} style={{ margin: "0 0.5rem 0 1rem" }} />
             <a
               href={group.url}
               target="_blank"
@@ -83,16 +81,18 @@ const GroupCard: React.FC<GroupCardProps> = ({ group, setGroup }) => {
                 fontSize: "1rem",
                 color: "#1D4ED8",
                 textDecoration: "none",
+                wordBreak: "break-all",
               }}
             >
-              {group.url}
+              {group.url.length > 25
+                ? `${group.url.slice(0, 25)}...`
+                : group.url}
             </a>
-            <IconMapPin
-              size={"1.5rem"}
-              strokeWidth={2}
-              style={{ marginRight: "0.5rem" }}
-            />
+            <span className={classes.mobileBreak} />
+            <IconMapPin strokeWidth={2} style={{ marginRight: "0.5rem" }} />
             {group.room}
+            <IconClock strokeWidth={2} style={{ margin: "0 0.5rem 0 1rem" }} />
+            {group.date}
           </p>
           <p
             style={{
