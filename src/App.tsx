@@ -1,32 +1,26 @@
-import { IconCurrentLocation } from '@tabler/icons-react';
-import { Geolocation } from 'ol';
-import { useMemo, useRef, useState } from 'react';
-import { GikadaiMap } from './GikadaiMap';
-import { Point, type SimpleGeometry } from 'ol/geom';
-import { Map as OlMap } from 'ol';
+import { IconCurrentLocation } from "@tabler/icons-react";
+import { Geolocation } from "ol";
+import { useMemo, useRef, useState, useEffect } from "react";
+import { GikadaiMap } from "./GikadaiMap";
+import { Point, type SimpleGeometry } from "ol/geom";
+import { Map as OlMap } from "ol";
+import BuildingCard from "./components/BuildingCard";
+import GroupCard from "./components/GroupCard";
+import { Children } from "./components/Children";
+import { Building } from "./components/Building";
 
-import classes from './App.module.css';
+import classes from "./App.module.css";
 
 const geolocation = new Geolocation({
   trackingOptions: {
     enableHighAccuracy: true,
   },
-  projection: 'EPSG:3857',
+  projection: "EPSG:3857",
 });
-
-interface Children {
-  name: string;
-  description: string;
-}
-
-interface Building {
-  id: number;
-  name: string;
-  children: Children[];
-}
 
 function App() {
   const [building, setBuilding] = useState<Building>();
+  const [group, setGroup] = useState<Children>();
   /* const [currentPosition, setCurrentPosition] = useState();
 
   geolocation.on('change:position', () => {
@@ -37,8 +31,23 @@ function App() {
   }); */
 
   const tracking = useRef<boolean>(false);
-
   const mapref = useRef<React.MutableRefObject<OlMap | undefined>>();
+  const [focus_padding, setPadding] = useState(window.innerHeight * 0.45);
+
+  useEffect(() => {
+    const updatePadding = () => {
+      if (building !== undefined) {
+        setPadding(window.innerHeight * 0.45);
+      } else {
+        setPadding(0);
+      }
+    };
+    updatePadding();
+    window.addEventListener("resize", updatePadding);
+    return () => {
+      window.removeEventListener("resize", updatePadding);
+    };
+  }, [building]);
 
   const gikadaiMap = useMemo(
     () => (
@@ -48,12 +57,19 @@ function App() {
             event.pixel,
             (feature) => {
               return feature;
-            },
+            }
           );
-          if (feature?.get('children')) {
+          if (feature?.get("children")) {
             const geometry = feature.getGeometry() as SimpleGeometry;
-            event.map.getView().fit(geometry, { duration: 500 });
-            setBuilding(feature.getProperties() as Building);
+            event.map.getView().fit(geometry, {
+              duration: 500,
+              padding: [0, 0, focus_padding, 0],
+            });
+            const select = feature.getProperties() as Building;
+            if (typeof select.id === "number") {
+              setBuilding(select);
+              setGroup(undefined);
+            }
           }
         }}
         geolocation={geolocation}
@@ -61,7 +77,7 @@ function App() {
         ref={mapref}
       />
     ),
-    [],
+    []
   );
 
   return (
@@ -79,59 +95,22 @@ function App() {
           if (tracking.current && coordinates) {
             mapref.current?.current
               ?.getView()
-              .fit(new Point(coordinates), { duration: 500 });
+              .fit(new Point(coordinates), { duration: 500, maxZoom: 19 });
           }
         }}
       >
         <IconCurrentLocation size={32} />
       </button>
 
-      <div className={`${classes.slide} ${building ? classes.slideAnim : ''}`}>
-        <div
-          style={{
-            maxWidth: '800px',
-            height: '100%',
-            width: '100%',
-            backgroundColor: '#ffffff',
-            borderRadius: '1rem 1rem 0 0',
-            padding: '1rem',
-            margin: '0 auto',
-            border: 'solid 1px #aaa',
-          }}
-        >
-          <h2
-            style={{
-              fontSize: '1.25rem', // text-xl
-              fontWeight: 'bold', // font-bold
-              marginTop: 0,
-              marginBottom: '1rem', // mb-4
-            }}
-          >
-            {building?.name}
-          </h2>
-          {building?.children.map((child) => (
-            <div
-              key={child.name}
-              style={{ borderRadius: '0.8rem', border: 'solid 1px #aaa' }}
-            >
-              <p>{child.name}</p>
-              {/* <p>{child.description}</p> */}
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => setBuilding(undefined)}
-            style={{
-              marginTop: '1rem', // mt-4
-              padding: '0.5rem', // p-2
-              backgroundColor: '#ef4444', // bg-red-500
-              color: '#ffffff', // text-white
-              borderRadius: '0.25rem', // rounded
-            }}
-          >
-            Close
-          </button>
-        </div>
+      <div className={`${classes.slide1} ${building ? classes.slideAnim : ""}`}>
+        <BuildingCard
+          building={building}
+          setBuilding={setBuilding}
+          setGroup={setGroup}
+        />
+      </div>
+      <div className={`${classes.slide2} ${group ? classes.slideAnim : ""}`}>
+        <GroupCard group={group} setGroup={setGroup} />
       </div>
     </>
   );
