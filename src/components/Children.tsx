@@ -4,4 +4,5 @@ export interface Children {
   url: string;
   src: string;
   room: string;
+  date: string;
 }

@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+  .mobileBreak {
+    display: block;
+    width: 100%;
+  }
+}

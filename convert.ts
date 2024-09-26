@@ -9,8 +9,7 @@ const Children = z.object({
   url: z.string(),
   src: z.string(),
   room: z.string(),
-  /* date: z.string(),
-  room: z.string(), */
+  date: z.string(),
 });
 
 const GeoJSON = z.object({
