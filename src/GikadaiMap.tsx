@@ -109,8 +109,8 @@ export const GikadaiMap = forwardRef(function MyInput(
       controls: [],
       view: new View({
         center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
-        zoom: 17, //ズームレベル
-        minZoom: 16, //最小ズームレベル
+        zoom: 18, //ズームレベル
+        minZoom: 18, //最小ズームレベル
         maxZoom: 19,
       }),
       layers: [
@@ -252,9 +252,10 @@ export const GikadaiMap = forwardRef(function MyInput(
           .transform("EPSG:3857", "EPSG:4326")
           .getCoordinates()
       );
-      /* console.log(e.)
+      /* 
+        console.log(e.)
         const feature = map.forEachFeatureAtPixel(e.pixel, (feature) => {
-          return feature;
+        return feature;
         }); */
 
       onClick(e);

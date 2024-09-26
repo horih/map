@@ -17,7 +17,15 @@
   background-color: #606060;
 }
 
-.slide {
+.slide1 {
+  position: fixed;
+  bottom: -45%;
+  width: 100%;
+  height: 45%;
+  transition: bottom 0.25s;
+}
+
+.slide2 {
   position: fixed;
   bottom: -45%;
   width: 100%;
@@ -27,34 +35,4 @@
 
 .slideAnim {
   bottom: 0;
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slideInLeft {
-  animation: slideInLeft 0.3s ease-out;
-}
-
-.slideInRight {
-  animation: slideInRight 0.3s ease-out;
 }

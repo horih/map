@@ -6,6 +6,9 @@ import { z } from "zod";
 const Children = z.object({
   name: z.string(),
   description: z.string(),
+  url: z.string(),
+  src: z.string(),
+  room: z.string(),
   /* date: z.string(),
   room: z.string(), */
 });
