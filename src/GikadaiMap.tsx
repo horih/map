@@ -15,59 +15,11 @@ import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 
 import streets from "./assets/78.json";
 import buildingspolygon from "./assets/546.json";
-
-function getBuildingBgColor(group: string) {
-  switch (group) {
-    case "A棟群":
-      return "#A12E2A";
-    case "B棟群":
-      return "#D88535";
-    case "C棟群":
-      return "#377641";
-    case "D棟群":
-      return "#1E3368";
-    case "E棟群":
-      return "#FFFFFF";
-    case "F棟群":
-      return "#814A8C";
-    case "G棟群":
-      return "#8A8A8A";
-    default:
-      return "gray";
-  }
-}
-
-function getBuildingTextColor(group: string) {
-  switch (group) {
-    case "A棟群":
-    case "B棟群":
-    case "C棟群":
-    case "D棟群":
-    case "F棟群":
-    case "G棟群":
-      return "#FFFFFF";
-    case "E棟群":
-      return "#000000";
-    default:
-      return "gray";
-  }
-}
-
-function getBuildingBorderColor(group: string) {
-  switch (group) {
-    case "A棟群":
-    case "B棟群":
-    case "C棟群":
-    case "D棟群":
-    case "F棟群":
-    case "G棟群":
-      return "#FFFFFF";
-    case "E棟群":
-      return "#000000";
-    default:
-      return "gray";
-  }
-}
+import {
+  getBuildingBgColor,
+  getBuildingBorderColor,
+  getBuildingTextColor,
+} from "./components/BuildingColor";
 
 const currentPositionFeature = new Feature();
 currentPositionFeature.setStyle(
@@ -108,7 +60,11 @@ export const GikadaiMap = forwardRef(function MyInput(
     const map = new OlMap({
       controls: [],
       view: new View({
-        center: transform([137.408, 34.7016], "EPSG:4326", "EPSG:3857"),
+        center: transform(
+          [137.41032760122982, 34.7011994290326],
+          "EPSG:4326",
+          "EPSG:3857"
+        ),
         zoom: 18, //ズームレベル
         minZoom: 18, //最小ズームレベル
         maxZoom: 19,

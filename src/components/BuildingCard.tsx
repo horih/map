@@ -2,6 +2,8 @@ import React from "react";
 import { IconMapPin, IconX } from "@tabler/icons-react";
 import { Children } from "./Children";
 import { Building } from "./Building";
+import classes from "./Building.module.css";
+import { getBuildingBgColor } from "./BuildingColor";
 
 interface ChildSheetProps {
   child: Children;
@@ -115,6 +117,22 @@ const BuildingCard: React.FC<BuildingCardProps> = ({
 }) => {
   if (!building) return null;
 
+  const getFirst = (text: string) => {
+    const match = text.match(/^[a-zA-Z0-9]+/);
+    return match ? match[0] : "";
+  };
+  const char = building.name.charAt(0);
+  const first = getFirst(building.name);
+  let styledText;
+  let restText;
+  if (first) {
+    styledText = first;
+    restText = building.name.slice(first.length);
+  } else {
+    styledText = char;
+    restText = building.name.slice(1);
+  }
+
   return (
     <div
       style={{
@@ -129,16 +147,16 @@ const BuildingCard: React.FC<BuildingCardProps> = ({
         position: "relative",
       }}
     >
-      <h2
-        style={{
-          fontSize: "1.25rem",
-          fontWeight: "bold",
-          marginTop: 0,
-          marginBottom: "1rem",
-        }}
-      >
-        {building.name}
+      <h2 className={classes.title}>
+        <span
+          className={classes.titleFirst}
+          style={{ color: getBuildingBgColor(building.group) }}
+        >
+          {styledText}
+        </span>
+        {restText}
       </h2>
+
       <div
         style={{
           overflow: "auto",
