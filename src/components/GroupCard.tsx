@@ -19,7 +19,7 @@ const GroupCard: React.FC<GroupCardProps> = ({ group, setGroup }) => {
         width: "100%",
         backgroundColor: "#ffffff",
         borderRadius: "1rem 1rem 0 0",
-        padding: "1rem",
+        padding: "0",
         margin: "0 auto",
         border: "solid 1px #aaa",
         position: "relative",
@@ -47,6 +47,7 @@ const GroupCard: React.FC<GroupCardProps> = ({ group, setGroup }) => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
+              borderRadius: "1rem 1rem 0 0",
             }}
           />
         </div>
@@ -65,40 +66,47 @@ const GroupCard: React.FC<GroupCardProps> = ({ group, setGroup }) => {
             style={{
               fontSize: "1rem",
               color: "#333",
-              margin: 0,
+              margin: "auto",
               display: "flex",
               justifyContent: "flex-end",
+              textAlign: "left",
               alignItems: "center",
               flexWrap: "wrap",
             }}
           >
-            <IconWorld strokeWidth={2} style={{ margin: "0 0.5rem 0 0" }} />
-            <a
-              href={group.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontSize: "1rem",
-                color: "#1D4ED8",
-                textDecoration: "none",
-                wordBreak: "break-all",
-              }}
-            >
-              {group.url.length > 25
-                ? `${group.url.slice(0, 25)}...`
-                : group.url}
-            </a>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <IconWorld strokeWidth={2} />
+              <a
+                href={group.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: "1rem",
+                  color: "#1D4ED8",
+                  textDecoration: "none",
+                  wordBreak: "break-all",
+                }}
+              >
+                {group.url.length > 25
+                  ? `${group.url.slice(0, 25)}...`
+                  : group.url}
+              </a>
+            </span>
             <span className={classes.mobileBreak} />
-            <IconMapPin strokeWidth={2} style={{ margin: "0 0.5rem 0 0" }} />
-            {group.room}
-            <IconClock strokeWidth={2} style={{ margin: "0 0.5rem 0 0" }} />
-            {group.date}
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <IconMapPin strokeWidth={2} />
+              {group.room}
+            </span>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <IconClock strokeWidth={2} />
+              {group.date}
+            </span>
           </p>
           <p
             style={{
               fontSize: "0.875rem",
               color: "#666",
-              margin: 0,
+              marginTop: "1rem",
             }}
           >
             {group.description}

@@ -3,4 +3,12 @@
     display: block;
     width: 100%;
   }
+  p {
+    justify-content: flex-start;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
