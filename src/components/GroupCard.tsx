@@ -74,27 +74,33 @@ const GroupCard: React.FC<GroupCardProps> = ({ group, setGroup }) => {
               flexWrap: "wrap",
             }}
           >
-            <IconWorld strokeWidth={2} />
-            <a
-              href={group.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontSize: "1rem",
-                color: "#1D4ED8",
-                textDecoration: "none",
-                wordBreak: "break-all",
-              }}
-            >
-              {group.url.length > 25
-                ? `${group.url.slice(0, 25)}...`
-                : group.url}
-            </a>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <IconWorld strokeWidth={2} />
+              <a
+                href={group.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: "1rem",
+                  color: "#1D4ED8",
+                  textDecoration: "none",
+                  wordBreak: "break-all",
+                }}
+              >
+                {group.url.length > 25
+                  ? `${group.url.slice(0, 25)}...`
+                  : group.url}
+              </a>
+            </span>
             <span className={classes.mobileBreak} />
-            <IconMapPin strokeWidth={2} />
-            {group.room}
-            <IconClock strokeWidth={2} />
-            {group.date}
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <IconMapPin strokeWidth={2} />
+              {group.room}
+            </span>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <IconClock strokeWidth={2} />
+              {group.date}
+            </span>
           </p>
           <p
             style={{
