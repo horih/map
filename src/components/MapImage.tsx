@@ -28,7 +28,7 @@ export function MapImage({ id, image, options }: MapImageProps) {
     return () => {
       map.removeImage(id);
     };
-  }, [id, image, options, map]);
+  }, [map, id, image, options]);
 
   return null;
 }
