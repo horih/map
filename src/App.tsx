@@ -14,20 +14,21 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 export function App() {
   return (
     <MapLibre
-      initialViewState={{
-        longitude: 137.41032760122982,
-        latitude: 34.7011994290326, // starting position [lng, lat]
-        zoom: 15, // starting zoom
-        fitBoundsOptions: {},
-      }}
       style={{ width: '100dvw', height: '100dvh' }}
-      //maxBounds={[[137.41032760122982, 34.7011994290326], [137.41032760122982, 34.7011994290326]]}
       mapStyle={{
         version: 8,
         sources: {},
         layers: [],
         glyphs: 'https://glyphs.geolonia.com/{fontstack}/{range}.pbf',
       }}
+      initialViewState={{
+        longitude: 137.41032760122982,
+        latitude: 34.7011994290326,
+        zoom: 15,
+        fitBoundsOptions: {},
+      }}
+      //maxBounds={[[137.41032760122982, 34.7011994290326], [137.41032760122982, 34.7011994290326]]}
+      hash={true}
       attributionControl={false}
     >
       <ScaleControl />
