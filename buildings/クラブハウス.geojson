@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40660597995037, 34.70116559423589]
+  },
+  "properties": {
+    "name": "クラブハウス"
+  }
+}

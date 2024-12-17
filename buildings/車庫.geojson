@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41179425274566, 34.70035227347452]
+  },
+  "properties": {
+    "name": "車庫"
+  }
+}

@@ -1,1 +1,11 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40672671793138,34.701022523467145]},"properties":{"id":0,"name":"トレーニングジム","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40671056244656, 34.70117213624293]
+  },
+  "properties": {
+    "name": "トレーニングジム",
+    "icon": "training_gym"
+  }
+}

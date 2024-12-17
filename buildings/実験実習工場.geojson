@@ -1,1 +1,10 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.4077285910266,34.702042297352165]},"properties":{"id":0,"name":"実験実習工場","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4077285910266, 34.702042297352165]
+  },
+  "properties": {
+    "name": "実験実習工場"
+  }
+}

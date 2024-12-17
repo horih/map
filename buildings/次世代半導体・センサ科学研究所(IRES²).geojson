@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4101876540728, 34.70281561318147]
+  },
+  "properties": {
+    "name": "次世代半導体・センサ科学研究所(IRES²)"
+  }
+}

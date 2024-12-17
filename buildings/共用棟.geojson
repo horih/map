@@ -1,1 +1,10 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40590867308865,34.70311840649286]},"properties":{"id":0,"name":"共用棟","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40590867308865, 34.70311840649286]
+  },
+  "properties": {
+    "name": "共用棟"
+  }
+}

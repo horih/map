@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41326101778208, 34.70013663867786]
+  },
+  "properties": {
+    "name": "東第2駐車場",
+    "icon": "parking"
+  }
+}

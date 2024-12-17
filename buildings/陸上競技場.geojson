@@ -1,1 +1,11 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"id":0,"name":"陸上競技場","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40559210613264, 34.701734750607514]
+  },
+  "properties": {
+    "name": "陸上競技場",
+    "icon": "athletic"
+  }
+}

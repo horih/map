@@ -1,1 +1,11 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.4053332205883,34.70305079292288]},"properties":{"id":0,"name":"学生宿舎A棟","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4053332205883, 34.70305079292288]
+  },
+  "properties": {
+    "name": "学生宿舎A棟",
+    "icon": "dormitory"
+  }
+}

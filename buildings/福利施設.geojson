@@ -1,1 +1,11 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40891483651626,34.700793933258524]},"properties":{"id":0,"name":"福利施設","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40891483651626, 34.700793933258524]
+  },
+  "properties": {
+    "name": "福利施設",
+    "icon": "canteen"
+  }
+}
