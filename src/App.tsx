@@ -90,16 +90,13 @@ export function App() {
       <CampusMapIcon id="baseball" icon={IconBallBaseball} />
       <CampusMapIcon id="athletic" icon={IconRun} />
 
-      <Layer
-        type="background"
-        paint={{ 'background-color': 'rgb(239,239,239)' }}
-      />
+      <Layer type="background" paint={{ 'background-color': '#EFEFEF' }} />
       <Source type="geojson" data="/78.geojson">
-        <Layer type="fill" paint={{ 'fill-color': 'rgb(230, 230, 230)' }} />
-        <Layer type="line" paint={{ 'line-color': 'gray' }} />
+        <Layer type="fill" paint={{ 'fill-color': '#E6E6E6' }} />
+        <Layer type="line" paint={{ 'line-color': '#8B8B8B' }} />
       </Source>
       <Source type="geojson" data="/546.geojson">
-        <Layer type="fill" paint={{ 'fill-color': 'rgb(223, 208, 216)' }} />
+        <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
       </Source>
       <Source type="geojson" data="/buildings.geojson">
         <Layer
