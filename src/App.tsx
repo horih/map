@@ -31,8 +31,8 @@ export function App() {
       hash={true}
       attributionControl={false}
     >
-      <ScaleControl />
       <NavigationControl />
+      <ScaleControl />
       <GeolocateControl />
       <AttributionControl
         compact={true}
