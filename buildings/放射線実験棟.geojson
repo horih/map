@@ -1,1 +1,10 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.40694454257556,34.70255513855494]},"properties":{"id":0,"name":"放射線実験棟","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40694454257556, 34.70255513855494]
+  },
+  "properties": {
+    "name": "放射線実験棟"
+  }
+}

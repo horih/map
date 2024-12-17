@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40795797933689,
-      34.701439167070504
-    ]
+    "coordinates": [137.40795797933689, 34.701439167070504]
   },
   "properties": {
-    "id": 24,
     "name": "F1研究実験棟",
-    "group": "F棟群",
-    "children": []
+    "icon": "f_building"
   }
 }

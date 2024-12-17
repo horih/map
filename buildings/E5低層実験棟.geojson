@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40911506617192,
-      34.70257269253601
-    ]
+    "coordinates": [137.40911506617192, 34.70257269253601]
   },
   "properties": {
-    "id": 22,
     "name": "E5低層実験棟",
-    "group": "E棟群",
-    "children": []
+    "icon": "e_building"
   }
 }

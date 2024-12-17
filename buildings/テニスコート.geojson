@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40637786319274, 34.70044916243525]
+  },
+  "properties": {
+    "name": "テニスコート",
+    "icon": "tennis"
+  }
+}

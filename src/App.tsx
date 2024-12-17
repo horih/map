@@ -1,119 +1,66 @@
-import { IconCurrentLocation } from "@tabler/icons-react";
-import { Geolocation } from "ol";
-import { useMemo, useRef, useState, useEffect } from "react";
-import { GikadaiMap } from "./GikadaiMap";
-import { Point, type SimpleGeometry } from "ol/geom";
-import { Map as OlMap } from "ol";
-import BuildingCard from "./components/BuildingCard";
-import GroupCard from "./components/GroupCard";
-import { Children } from "./components/Children";
-import { Building } from "./components/Building";
+import {
+  Map as MapLibre,
+  Layer,
+  Source,
+  ScaleControl,
+  NavigationControl,
+  GeolocateControl,
+  AttributionControl,
+} from 'react-map-gl/maplibre';
+import { CampusMapIcons } from './components/CampusMapIcons';
 
-import classes from "./App.module.css";
+import 'maplibre-gl/dist/maplibre-gl.css';
 
-const geolocation = new Geolocation({
-  trackingOptions: {
-    enableHighAccuracy: true,
-  },
-  projection: "EPSG:3857",
-});
-
-function App() {
-  const [building, setBuilding] = useState<Building>();
-  const [group, setGroup] = useState<Children>();
-  /* const [currentPosition, setCurrentPosition] = useState();
-
-  geolocation.on('change:position', () => {
-    const coordinates = geolocation.getPosition();
-    currentPositionFeature.setGeometry(
-      coordinates ? new Point(coordinates) : undefined,
-    );
-  }); */
-
-  const tracking = useRef<boolean>(false);
-  const mapref = useRef<React.MutableRefObject<OlMap | undefined>>();
-  const [focus_padding, setPadding] = useState(window.innerHeight * 0.45);
-
-  useEffect(() => {
-    const updatePadding = () => {
-      if (building !== undefined) {
-        setPadding(window.innerHeight * 0.45);
-      } else {
-        setPadding(0);
-      }
-    };
-    updatePadding();
-    window.addEventListener("resize", updatePadding);
-    return () => {
-      window.removeEventListener("resize", updatePadding);
-    };
-  }, [building]);
-
-  const gikadaiMap = useMemo(
-    () => (
-      <GikadaiMap
-        onClick={(event) => {
-          const feature = event.map.forEachFeatureAtPixel(
-            event.pixel,
-            (feature) => {
-              return feature;
-            }
-          );
-          if (feature?.get("children")) {
-            const geometry = feature.getGeometry() as SimpleGeometry;
-            event.map.getView().fit(geometry, {
-              duration: 500,
-              padding: [0, 0, focus_padding, 0],
-            });
-            const select = feature.getProperties() as Building;
-            if (typeof select.id === "number") {
-              setBuilding(select);
-              setGroup(undefined);
-            }
-          }
-        }}
-        geolocation={geolocation}
-        tracking={tracking}
-        ref={mapref}
-      />
-    ),
-    []
-  );
-
+export function App() {
   return (
-    <>
-      {gikadaiMap}
-      <button
-        type="button"
-        className={classes.currentLocation}
-        onClick={() => {
-          if (!geolocation.getTracking()) {
-            geolocation.setTracking(true);
-          }
-          tracking.current = true;
-          const coordinates = geolocation.getPosition();
-          if (tracking.current && coordinates) {
-            mapref.current?.current
-              ?.getView()
-              .fit(new Point(coordinates), { duration: 500, maxZoom: 19 });
-          }
-        }}
-      >
-        <IconCurrentLocation size={32} />
-      </button>
-
-      <div className={`${classes.slide1} ${building ? classes.slideAnim : ""}`}>
-        <BuildingCard
-          building={building}
-          setBuilding={setBuilding}
-          setGroup={setGroup}
+    <MapLibre
+      initialViewState={{
+        longitude: 137.41032760122982,
+        latitude: 34.7011994290326, // starting position [lng, lat]
+        zoom: 15, // starting zoom
+        fitBoundsOptions: {},
+      }}
+      style={{ width: '100dvw', height: '100dvh' }}
+      //maxBounds={[[137.41032760122982, 34.7011994290326], [137.41032760122982, 34.7011994290326]]}
+      mapStyle={{
+        version: 8,
+        sources: {},
+        layers: [],
+        glyphs: 'https://glyphs.geolonia.com/{fontstack}/{range}.pbf',
+      }}
+      attributionControl={false}
+    >
+      <ScaleControl />
+      <NavigationControl />
+      <GeolocateControl />
+      <AttributionControl
+        compact={true}
+        customAttribution="国土地理院ベクトルタイルを加工して作成"
+      />
+      <CampusMapIcons />
+      <Layer
+        type="background"
+        paint={{ 'background-color': 'rgb(239,239,239)' }}
+      />
+      <Source type="geojson" data="/78.geojson">
+        <Layer type="fill" paint={{ 'fill-color': 'rgb(230, 230, 230)' }} />
+        <Layer type="line" paint={{ 'line-color': 'gray' }} />
+      </Source>
+      <Source type="geojson" data="/546.geojson">
+        <Layer type="fill" paint={{ 'fill-color': 'rgb(223, 208, 216)' }} />
+      </Source>
+      <Source type="geojson" data="/buildings.geojson">
+        <Layer
+          type="symbol"
+          layout={{
+            'icon-image': ['coalesce', ['get', 'icon'], 'default'],
+            'text-field': ['format', ['get', 'name'], { 'font-scale': 0.8 }],
+            'text-font': ['Noto Sans CJK JP Regular'],
+            'text-offset': [0, 1],
+            'text-anchor': 'top',
+          }}
         />
-      </div>
-      <div className={`${classes.slide2} ${group ? classes.slideAnim : ""}`}>
-        <GroupCard group={group} setGroup={setGroup} />
-      </div>
-    </>
+      </Source>
+    </MapLibre>
   );
 }
-
-export default App;

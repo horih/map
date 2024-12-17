@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40912946120548,
-      34.70182893988155
-    ]
+    "coordinates": [137.40912946120548, 34.70182893988155]
   },
   "properties": {
-    "id": 11,
     "name": "C3研究実験棟",
-    "group": "C棟群",
-    "children": []
+    "icon": "c_building"
   }
 }

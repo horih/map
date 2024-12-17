@@ -1,1 +1,10 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.4094764172916,34.70321209994505]},"properties":{"id":0,"name":"ベンチャー・ビジネス・ラボラトリー","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41014961969972, 34.703270747744526]
+  },
+  "properties": {
+    "name": "ベンチャー・ビジネス・ラボラトリー"
+  }
+}

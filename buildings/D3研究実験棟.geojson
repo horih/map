@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40835941600795,
-      34.701690409850826
-    ]
+    "coordinates": [137.40835941600795, 34.701690409850826]
   },
   "properties": {
-    "id": 15,
     "name": "D3研究実験棟",
-    "group": "D棟群",
-    "children": []
+    "icon": "d_building"
   }
 }

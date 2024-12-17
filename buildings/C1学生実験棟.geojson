@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40941620635982,
-      34.70155886129221
-    ]
+    "coordinates": [137.40941620635982, 34.70155886129221]
   },
   "properties": {
-    "id": 9,
     "name": "C1学生実験棟",
-    "group": "C棟群",
-    "children": []
+    "icon": "c_building"
   }
 }

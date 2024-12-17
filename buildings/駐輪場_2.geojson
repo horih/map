@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4119540008814, 34.701284281474756]
+  },
+  "properties": {
+    "name": "駐輪場",
+    "icon": "bicycle_parking"
+  }
+}

@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40783131817489,
-      34.70114294470298
-    ]
+    "coordinates": [137.40783131817489, 34.70114294470298]
   },
   "properties": {
-    "id": 23,
     "name": "F研究棟",
-    "group": "F棟群",
-    "children": []
+    "icon": "f_building"
   }
 }

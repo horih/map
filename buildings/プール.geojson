@@ -1,1 +1,11 @@
-{"type":"Feature","geometry":{"type":"Point","coordinates":[137.4060674,34.7006664]},"properties":{"id":0,"name":"プール","group":"","children":[]}}
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40593916826083, 34.70060686287688]
+  },
+  "properties": {
+    "name": "プール",
+    "icon": "pool"
+  }
+}

@@ -2,15 +2,10 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40866349995247,
-      34.70172938551208
-    ]
+    "coordinates": [137.40866349995247, 34.70172938551208]
   },
   "properties": {
-    "id": 16,
     "name": "D4大学院研究実験棟",
-    "group": "D棟群",
-    "children": []
+    "icon": "d_building"
   }
 }
