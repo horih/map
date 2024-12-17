@@ -47,12 +47,13 @@ export function App() {
         glyphs: 'https://glyphs.geolonia.com/{fontstack}/{range}.pbf',
       }}
       initialViewState={{
-        longitude: 137.41032760122982,
-        latitude: 34.7011994290326,
-        zoom: 15,
-        fitBoundsOptions: {},
+        longitude: 137.408839,
+        latitude: 34.70111,
       }}
-      //maxBounds={[[137.41032760122982, 34.7011994290326], [137.41032760122982, 34.7011994290326]]}
+      maxBounds={[
+        [137.401885986328, 34.6975902563304],
+        [137.415618896484, 34.7043644344585],
+      ]}
       hash={true}
       attributionControl={false}
     >
