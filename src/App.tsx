@@ -108,11 +108,11 @@ export function App() {
       <CampusMapIcon id="athletic" icon={IconRun} />
 
       <Layer type="background" paint={{ 'background-color': '#EFEFEF' }} />
-      <Source type="geojson" data="/78.geojson">
+      <Source type="geojson" data="/streets_original.geojson">
         <Layer type="fill" paint={{ 'fill-color': '#E6E6E6' }} />
         <Layer type="line" paint={{ 'line-color': '#8B8B8B' }} />
       </Source>
-      <Source type="geojson" data="/546.geojson">
+      <Source type="geojson" data="/buildings_original.geojson">
         <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
       </Source>
       <Source type="geojson" data="/buildings.geojson">
