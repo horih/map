@@ -6,6 +6,7 @@ import {
   NavigationControl,
   GeolocateControl,
   AttributionControl,
+  type LngLatBoundsLike,
 } from 'react-map-gl/maplibre';
 import { CampusMapIcon } from './components/CampusMapIcon';
 import {
@@ -37,6 +38,25 @@ import {
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 export function App() {
+  const bounds = [
+    [137.401885986328, 34.6975902563304],
+    [137.415618896484, 34.7043644344585],
+  ];
+  const maxBounds: LngLatBoundsLike = [
+    [
+      bounds[0][0] - (bounds[1][0] - bounds[0][0]) / 2,
+      bounds[0][1] - (bounds[1][1] - bounds[0][1]) / 2,
+    ],
+    [
+      bounds[1][0] + (bounds[1][0] - bounds[0][0]) / 2,
+      bounds[1][1] + (bounds[1][1] - bounds[0][1]) / 2,
+    ],
+  ];
+  const center = [
+    (bounds[0][0] + bounds[1][0]) / 2,
+    (bounds[0][1] + bounds[1][1]) / 2,
+  ];
+
   return (
     <MapLibre
       style={{ width: '100dvw', height: '100dvh' }}
@@ -47,13 +67,10 @@ export function App() {
         glyphs: 'https://glyphs.geolonia.com/{fontstack}/{range}.pbf',
       }}
       initialViewState={{
-        longitude: 137.408839,
-        latitude: 34.70111,
+        longitude: center[0],
+        latitude: center[1],
       }}
-      maxBounds={[
-        [137.401885986328, 34.6975902563304],
-        [137.415618896484, 34.7043644344585],
-      ]}
+      maxBounds={maxBounds}
       attributionControl={false}
     >
       <NavigationControl />
