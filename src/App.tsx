@@ -54,7 +54,6 @@ export function App() {
         [137.401885986328, 34.6975902563304],
         [137.415618896484, 34.7043644344585],
       ]}
-      hash={true}
       attributionControl={false}
     >
       <NavigationControl />
