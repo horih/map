@@ -9,7 +9,6 @@ import {
   NavigationControl,
   ScaleControl,
   Source,
-  useControl,
   useMap,
 } from 'react-map-gl/maplibre';
 import { ButtonControl } from './ButtonControl';
