@@ -73,30 +73,6 @@ export function App() {
       maxBounds={maxBounds}
       attributionControl={false}
     >
-      <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
-      <Source type="geojson" data="/terrains.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#CCF0D7' }} />
-      </Source>
-      <Source type="geojson" data="/streets.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#E6E6E6' }} />
-        <Layer type="line" paint={{ 'line-color': '#8B8B8B' }} />
-      </Source>
-      <Source type="geojson" data="/buildings.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
-      </Source>
-      <Source type="geojson" data="/points.geojson">
-        <Layer
-          type="symbol"
-          layout={{
-            'icon-image': ['coalesce', ['get', 'icon'], 'default'],
-            'text-field': ['format', ['get', 'name'], { 'font-scale': 0.8 }],
-            'text-font': ['Noto Sans CJK JP Regular'],
-            'text-offset': [0, 1],
-            'text-anchor': 'top',
-          }}
-        />
-      </Source>
-
       <NavigationControl />
       <ScaleControl />
       <GeolocateControl />
@@ -130,6 +106,30 @@ export function App() {
       <CampusMapIcon id="canteen" icon={IconToolsKitchen2} />
       <CampusMapIcon id="baseball" icon={IconBallBaseball} />
       <CampusMapIcon id="athletic" icon={IconRun} />
+
+      <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
+      <Source type="geojson" data="/terrains.geojson">
+        <Layer type="fill" paint={{ 'fill-color': '#CCF0D7' }} />
+      </Source>
+      <Source type="geojson" data="/streets.geojson">
+        <Layer type="fill" paint={{ 'fill-color': '#E6E6E6' }} />
+        <Layer type="line" paint={{ 'line-color': '#8B8B8B' }} />
+      </Source>
+      <Source type="geojson" data="/buildings.geojson">
+        <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
+      </Source>
+      <Source type="geojson" data="/points.geojson">
+        <Layer
+          type="symbol"
+          layout={{
+            'icon-image': ['coalesce', ['get', 'icon'], 'default'],
+            'text-field': ['format', ['get', 'name'], { 'font-scale': 0.8 }],
+            'text-font': ['Noto Sans CJK JP Regular'],
+            'text-offset': [0, 1],
+            'text-anchor': 'top',
+          }}
+        />
+      </Source>
     </MapLibre>
   );
 }
