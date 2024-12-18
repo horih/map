@@ -32,9 +32,8 @@ export function App() {
     (bounds[0][1] + bounds[1][1]) / 2,
   ];
 
-  const location = useLocation();
   const language =
-    location.pathname?.replace(/\/?$/, '') === '/en' ? 'en' : 'ja';
+    location.pathname.replace(/\/?$/, '') === '/en' ? 'en' : 'ja';
   document.documentElement.lang = language;
 
   return (
