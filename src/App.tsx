@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { IconLanguageHiragana } from '@tabler/icons-react';
+import { useEffect, useRef, useState } from 'react';
 import {
   AttributionControl,
   GeolocateControl,
@@ -29,12 +30,30 @@ function useLocalStorage(key: string, init: string) {
 }
 
 function LanguageControl({ onClick }: { onClick: (e: MouseEvent) => void }) {
+  const container = useRef<HTMLDivElement>(null);
+
   const button = document.createElement('button');
   button.setAttribute('type', 'button');
-  button.textContent = 'J/E';
   button.addEventListener('click', onClick);
-  useControl(() => new ButtonControl(button));
-  return null;
+  button.style.display = 'flex';
+  button.style.justifyContent = 'center';
+  button.style.alignItems = 'center';
+
+  useEffect(() => {
+    if (container.current) {
+      button.innerHTML = container.current?.innerHTML;
+    }
+  }, [button]);
+
+  useControl(() => new ButtonControl(button), {
+    position: 'top-left',
+  });
+
+  return (
+    <div ref={container} style={{ display: 'none' }}>
+      <IconLanguageHiragana />
+    </div>
+  );
 }
 
 export function App() {
@@ -78,9 +97,19 @@ export function App() {
       maxBounds={maxBounds}
       attributionControl={false}
     >
-      <NavigationControl />
-      <ScaleControl />
+      <LanguageControl
+        onClick={() =>
+          setLanguage((language) => (language === 'en' ? 'ja' : 'en'))
+        }
+      />
+      <ScaleControl position="bottom-left" />
+      <AttributionControl
+        position="bottom-right"
+        compact={true}
+        customAttribution="国土地理院ベクトルタイルを加工して作成"
+      />
       <GeolocateControl
+        position="bottom-right"
         positionOptions={{
           enableHighAccuracy: true,
         }}
@@ -89,15 +118,7 @@ export function App() {
           maxZoom: 18,
         }}
       />
-      <AttributionControl
-        compact={true}
-        customAttribution="国土地理院ベクトルタイルを加工して作成"
-      />
-      <LanguageControl
-        onClick={() =>
-          setLanguage((language) => (language === 'en' ? 'ja' : 'en'))
-        }
-      />
+      <NavigationControl position="bottom-right" />
 
       <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
       <Source type="geojson" data="/terrains.geojson">
