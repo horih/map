@@ -88,11 +88,7 @@ export function App() {
       />
       <AttributionControl
         compact={true}
-        customAttribution={
-          language === 'en'
-            ? 'Created by editing GSI Vector Tile'
-            : '国土地理院ベクトルタイルを加工して作成'
-        }
+        customAttribution="国土地理院ベクトルタイルを加工して作成"
       />
       <LanguageControl
         onClick={() =>
