@@ -56,7 +56,7 @@ export function App() {
         customAttribution="国土地理院ベクトルタイルを加工して作成"
       />
 
-      {/* <CampusMapIcon id="default" />
+      <CampusMapIcon id="default" />
 
       <CampusMapIcon id="a_building" />
       <CampusMapIcon id="b_building" />
@@ -80,7 +80,7 @@ export function App() {
       <CampusMapIcon id="library" />
       <CampusMapIcon id="canteen" />
       <CampusMapIcon id="baseball" />
-      <CampusMapIcon id="athletic" /> */}
+      <CampusMapIcon id="athletic" />
 
       <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
       <Source type="geojson" data="/terrains.geojson">
