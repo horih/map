@@ -33,7 +33,9 @@ export function App() {
   ];
 
   const location = useLocation();
-  const language = location.pathname?.replace(/\/?$/, '') === '/en' ? 'en' : 'ja';
+  const language =
+    location.pathname?.replace(/\/?$/, '') === '/en' ? 'en' : 'ja';
+  document.documentElement.lang = language;
 
   return (
     <MapLibre
