@@ -1,29 +1,4 @@
 import {
-  IconArcheryArrow,
-  IconBallBaseball,
-  IconBallBasketball,
-  IconBallTennis,
-  IconBarbellFilled,
-  IconBook,
-  IconBusStop,
-  IconHome,
-  IconLetterA,
-  IconLetterB,
-  IconLetterC,
-  IconLetterD,
-  IconLetterE,
-  IconLetterF,
-  IconLetterG,
-  IconMapPin,
-  IconMotorbike,
-  IconParking,
-  IconRun,
-  IconStethoscope,
-  IconSwimming,
-  IconToolsKitchen2,
-  IconTrees,
-} from '@tabler/icons-react';
-import {
   AttributionControl,
   GeolocateControl,
   Layer,
@@ -81,31 +56,31 @@ export function App() {
         customAttribution="国土地理院ベクトルタイルを加工して作成"
       />
 
-      <CampusMapIcon id="default" icon={IconMapPin} />
+      {/* <CampusMapIcon id="default" />
 
-      <CampusMapIcon id="a_building" color="#A12E2A" icon={IconLetterA} />
-      <CampusMapIcon id="b_building" color="#D88535" icon={IconLetterB} />
-      <CampusMapIcon id="c_building" color="#377641" icon={IconLetterC} />
-      <CampusMapIcon id="d_building" color="#1E3368" icon={IconLetterD} />
-      <CampusMapIcon id="e_building" color="#2B66B1" icon={IconLetterE} />
-      <CampusMapIcon id="f_building" color="#814A8C" icon={IconLetterF} />
-      <CampusMapIcon id="g_building" color="#201816" icon={IconLetterG} />
+      <CampusMapIcon id="a_building" />
+      <CampusMapIcon id="b_building" />
+      <CampusMapIcon id="c_building" />
+      <CampusMapIcon id="d_building" />
+      <CampusMapIcon id="e_building" />
+      <CampusMapIcon id="f_building" />
+      <CampusMapIcon id="g_building" />
 
-      <CampusMapIcon id="dormitory" icon={IconHome} />
-      <CampusMapIcon id="park" icon={IconTrees} />
-      <CampusMapIcon id="tennis" icon={IconBallTennis} />
-      <CampusMapIcon id="training_gym" icon={IconBarbellFilled} />
-      <CampusMapIcon id="bus_stop" icon={IconBusStop} />
-      <CampusMapIcon id="pool" icon={IconSwimming} />
-      <CampusMapIcon id="kyudo" icon={IconArcheryArrow} />
-      <CampusMapIcon id="health_care" icon={IconStethoscope} />
-      <CampusMapIcon id="gym" icon={IconBallBasketball} />
-      <CampusMapIcon id="bicycle_parking" icon={IconMotorbike} />
-      <CampusMapIcon id="parking" icon={IconParking} />
-      <CampusMapIcon id="library" icon={IconBook} />
-      <CampusMapIcon id="canteen" icon={IconToolsKitchen2} />
-      <CampusMapIcon id="baseball" icon={IconBallBaseball} />
-      <CampusMapIcon id="athletic" icon={IconRun} />
+      <CampusMapIcon id="dormitory" />
+      <CampusMapIcon id="park" />
+      <CampusMapIcon id="tennis" />
+      <CampusMapIcon id="training_gym" />
+      <CampusMapIcon id="bus_stop" />
+      <CampusMapIcon id="pool" />
+      <CampusMapIcon id="kyudo" />
+      <CampusMapIcon id="health_care" />
+      <CampusMapIcon id="gym" />
+      <CampusMapIcon id="bicycle_parking" />
+      <CampusMapIcon id="parking" />
+      <CampusMapIcon id="library" />
+      <CampusMapIcon id="canteen" />
+      <CampusMapIcon id="baseball" />
+      <CampusMapIcon id="athletic" /> */}
 
       <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
       <Source type="geojson" data="/terrains.geojson">
@@ -118,7 +93,7 @@ export function App() {
       <Source type="geojson" data="/buildings.geojson">
         <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
       </Source>
-      <Source type="geojson" data="/points.geojson">
+      <Source type="geojson" data="/generated/points.geojson">
         <Layer
           type="symbol"
           layout={{

@@ -27,7 +27,7 @@ const features = await Promise.all(
 );
 
 await writeFile(
-  join(import.meta.dirname, 'public/points.geojson'),
+  join(import.meta.dirname, 'public/generated/points.geojson'),
   JSON.stringify({
     type: 'FeatureCollection',
     features,
