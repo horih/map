@@ -14,6 +14,7 @@ import {
 import { ButtonControl } from './ButtonControl';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
+import './App.css';
 
 function useLocalStorage(key: string, init: string) {
   const [value, setValue] = useState(() => localStorage.getItem(key) ?? init);
