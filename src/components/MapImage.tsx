@@ -25,6 +25,7 @@ export function MapImage({ id, image, options }: MapImageProps) {
       return;
     }
     map.addImage(id, image, options);
+    map.redraw();
     return () => {
       map.removeImage(id);
     };
