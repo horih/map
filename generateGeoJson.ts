@@ -10,21 +10,19 @@ const GeoJSON = z.object({
     coordinates: z.array(z.number()).length(2),
   }),
   properties: z.object({
-    "label:ja": z.string(),
-    "label:en": z.string().optional(),
+    'label:ja': z.string(),
+    'label:en': z.string().optional(),
     icon: z.string().optional(),
   }),
 });
 
 const features = await Promise.all(
-  (await glob(join(import.meta.dirname, 'points/*.json'))).map(
-    async (path) => {
-      const geojson = await readFile(path)
-        .then((res) => res.toString())
-        .then((res) => JSON.parse(res));
-      return GeoJSON.parse(geojson);
-    },
-  ),
+  (await glob(join(import.meta.dirname, 'points/*.json'))).map(async (path) => {
+    const geojson = await readFile(path)
+      .then((res) => res.toString())
+      .then((res) => JSON.parse(res));
+    return GeoJSON.parse(geojson);
+  }),
 );
 
 await writeFile(
