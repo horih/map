@@ -16,7 +16,7 @@ const GeoJSON = z.object({
 });
 
 const features = await Promise.all(
-  (await glob(join(import.meta.dirname, 'buildings/*.geojson'))).map(
+  (await glob(join(import.meta.dirname, 'points/*.geojson'))).map(
     async (path) => {
       const geojson = await readFile(path)
         .then((res) => res.toString())
@@ -27,7 +27,7 @@ const features = await Promise.all(
 );
 
 await writeFile(
-  join(import.meta.dirname, 'public/buildings.geojson'),
+  join(import.meta.dirname, 'public/points.geojson'),
   JSON.stringify({
     type: 'FeatureCollection',
     features,
