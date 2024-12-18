@@ -8,7 +8,6 @@ import {
   ScaleControl,
   Source,
 } from 'react-map-gl/maplibre';
-import { useLocation } from 'react-use';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
 
