@@ -26,12 +26,10 @@ import {
 import {
   AttributionControl,
   GeolocateControl,
-  Layer,
   type LngLatBoundsLike,
   Map as MapLibre,
   NavigationControl,
   ScaleControl,
-  Source,
 } from 'react-map-gl/maplibre';
 import { CampusMapIcon } from './components/CampusMapIcon';
 
@@ -62,8 +60,67 @@ export function App() {
       style={{ width: '100dvw', height: '100dvh' }}
       mapStyle={{
         version: 8,
-        sources: {},
-        layers: [],
+        sources: {
+          terrains: {
+            type: 'geojson',
+            data: '/terrains.geojson',
+          },
+          streets: {
+            type: 'geojson',
+            data: '/streets.geojson',
+          },
+          buildings: {
+            type: 'geojson',
+            data: '/buildings.geojson',
+          },
+          points: {
+            type: 'geojson',
+            data: '/points.geojson',
+          },
+        },
+        layers: [
+          {
+            id: 'background',
+            type: 'background',
+            paint: { 'background-color': '#F6F8FA' },
+          },
+          {
+            id: 'terrains',
+            type: 'fill',
+            source: 'terrains',
+            paint: { 'fill-color': '#CCF0D7' },
+          },
+          {
+            id: 'streets_fill',
+            type: 'fill',
+            source: 'streets',
+            paint: { 'fill-color': '#E6E6E6' },
+          },
+          {
+            id: 'streets_line',
+            type: 'line',
+            source: 'streets',
+            paint: { 'line-color': '#8B8B8B' },
+          },
+          {
+            id: 'buildings',
+            type: 'fill',
+            source: 'buildings',
+            paint: { 'fill-color': '#DFD0D8' },
+          },
+          {
+            id: 'points',
+            type: 'symbol',
+            source: 'points',
+            layout: {
+              'icon-image': ['coalesce', ['get', 'icon'], 'default'],
+              'text-field': ['format', ['get', 'name'], { 'font-scale': 0.8 }],
+              'text-font': ['Noto Sans CJK JP Regular'],
+              'text-offset': [0, 1],
+              'text-anchor': 'top',
+            },
+          },
+        ],
         glyphs: 'https://glyphs.geolonia.com/{fontstack}/{range}.pbf',
       }}
       initialViewState={{
@@ -73,30 +130,6 @@ export function App() {
       maxBounds={maxBounds}
       attributionControl={false}
     >
-      <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
-      <Source type="geojson" data="/terrains.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#CCF0D7' }} />
-      </Source>
-      <Source type="geojson" data="/streets.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#E6E6E6' }} />
-        <Layer type="line" paint={{ 'line-color': '#8B8B8B' }} />
-      </Source>
-      <Source type="geojson" data="/buildings.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
-      </Source>
-      <Source type="geojson" data="/points.geojson">
-        <Layer
-          type="symbol"
-          layout={{
-            'icon-image': ['coalesce', ['get', 'icon'], 'default'],
-            'text-field': ['format', ['get', 'name'], { 'font-scale': 0.8 }],
-            'text-font': ['Noto Sans CJK JP Regular'],
-            'text-offset': [0, 1],
-            'text-anchor': 'top',
-          }}
-        />
-      </Source>
-
       <NavigationControl />
       <ScaleControl />
       <GeolocateControl />
