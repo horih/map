@@ -73,7 +73,7 @@ export function App() {
       maxBounds={maxBounds}
       attributionControl={false}
     >
-      <Layer type="background" paint={{ 'background-color': '#EFEFEF' }} />
+      <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
       <Source type="geojson" data="/terrains.geojson">
         <Layer type="fill" paint={{ 'fill-color': '#CCF0D7' }} />
       </Source>
