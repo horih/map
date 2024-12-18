@@ -41,7 +41,7 @@ function generateIcon(Icon: TablerIcon, color = '#8A8A8A') {
   );
 }
 
-tmp.dir({ unsafeCleanup: true }, async (_, path, cleanup) => {
+tmp.dir({ unsafeCleanup: true }, (_, path, cleanup) => {
   writeFileSync(`${path}/default.svg`, generateIcon(IconMapPin));
 
   writeFileSync(`${path}/a_building.svg`, generateIcon(IconLetterA, '#A12E2A'));
