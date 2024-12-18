@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   AttributionControl,
   GeolocateControl,
@@ -7,9 +8,34 @@ import {
   NavigationControl,
   ScaleControl,
   Source,
+  useControl,
 } from 'react-map-gl/maplibre';
+import { ButtonControl } from './ButtonControl';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
+
+function useLocalStorage(key: string, init: string) {
+  const [value, setValue] = useState(() => localStorage.getItem(key) ?? init);
+  return [
+    value,
+    (action: (prev: string) => string) => {
+      setValue((prev) => {
+        const value = action(prev);
+        localStorage.setItem(key, value);
+        return value;
+      });
+    },
+  ] as const;
+}
+
+function LanguageControl({ onClick }: { onClick: (e: MouseEvent) => void }) {
+  const button = document.createElement('button');
+  button.setAttribute('type', 'button');
+  button.textContent = 'J/E';
+  button.addEventListener('click', onClick);
+  useControl(() => new ButtonControl(button));
+  return null;
+}
 
 export function App() {
   const bounds = [
@@ -31,8 +57,7 @@ export function App() {
     (bounds[0][1] + bounds[1][1]) / 2,
   ];
 
-  const language =
-    location.pathname.replace(/\/?$/, '') === '/en' ? 'en' : 'ja';
+  const [language, setLanguage] = useLocalStorage('language', 'ja');
   document.documentElement.lang = language;
 
   return (
@@ -63,7 +88,16 @@ export function App() {
       />
       <AttributionControl
         compact={true}
-        customAttribution="国土地理院ベクトルタイルを加工して作成"
+        customAttribution={
+          language === 'en'
+            ? 'Created by editing GSI Vector Tile'
+            : '国土地理院ベクトルタイルを加工して作成'
+        }
+      />
+      <LanguageControl
+        onClick={() =>
+          setLanguage((language) => (language === 'en' ? 'ja' : 'en'))
+        }
       />
 
       <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
