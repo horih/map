@@ -1,15 +1,4 @@
 import {
-  Map as MapLibre,
-  Layer,
-  Source,
-  ScaleControl,
-  NavigationControl,
-  GeolocateControl,
-  AttributionControl,
-  type LngLatBoundsLike,
-} from 'react-map-gl/maplibre';
-import { CampusMapIcon } from './components/CampusMapIcon';
-import {
   IconArcheryArrow,
   IconBallBaseball,
   IconBallBasketball,
@@ -34,6 +23,17 @@ import {
   IconToolsKitchen2,
   IconTrees,
 } from '@tabler/icons-react';
+import {
+  AttributionControl,
+  GeolocateControl,
+  Layer,
+  type LngLatBoundsLike,
+  Map as MapLibre,
+  NavigationControl,
+  ScaleControl,
+  Source,
+} from 'react-map-gl/maplibre';
+import { CampusMapIcon } from './components/CampusMapIcon';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
 
