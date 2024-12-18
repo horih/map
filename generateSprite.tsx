@@ -1,3 +1,6 @@
+import { execSync } from 'node:child_process';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import {
   IconArcheryArrow,
   IconBallBaseball,
@@ -24,12 +27,9 @@ import {
   IconTrees,
   type TablerIcon,
 } from '@tabler/icons-react';
-import { renderToString } from 'react-dom/server';
 import React from 'react';
-import { join } from 'node:path';
-import { writeFileSync } from 'node:fs';
+import { renderToString } from 'react-dom/server';
 import tmp from 'tmp';
-import { execSync } from 'node:child_process';
 
 function generateIcon(Icon: TablerIcon, color = '#8A8A8A') {
   return renderToString(
@@ -68,9 +68,11 @@ tmp.dir({ unsafeCleanup: true }, async (_, path, cleanup) => {
   writeFileSync(`${path}/baseball.svg`, generateIcon(IconBallBaseball));
   writeFileSync(`${path}/athletic.svg`, generateIcon(IconRun));
 
-  execSync(`spreet ${path} ${join(import.meta.dirname, 'public/sprite')}`);
   execSync(
-    `spreet --retina ${path} ${join(import.meta.dirname, 'public/sprite@2x')}`,
+    `spreet --minify-index-file ${path} ${join(import.meta.dirname, 'public/sprite')}`,
+  );
+  execSync(
+    `spreet --retina --minify-index-file ${path} ${join(import.meta.dirname, 'public/sprite@2x')}`,
   );
 
   cleanup();

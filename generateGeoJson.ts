@@ -1,6 +1,6 @@
-import { glob } from 'glob';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { glob } from 'glob';
 import { z } from 'zod';
 
 const GeoJSON = z.object({
