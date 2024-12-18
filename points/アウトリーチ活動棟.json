@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.41068275724376,
-      34.70091171903043
-    ]
+    "coordinates": [137.41068275724376, 34.70091171903043]
   },
   "properties": {
     "name": "アウトリーチ活動棟",

@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.4077285910266,
-      34.702042297352165
-    ]
+    "coordinates": [137.4077285910266, 34.702042297352165]
   },
   "properties": {
     "name": "実験実習工場",

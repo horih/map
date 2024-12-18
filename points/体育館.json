@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40595618029727,
-      34.70103825765955
-    ]
+    "coordinates": [137.40595618029727, 34.70103825765955]
   },
   "properties": {
     "name": "体育館",

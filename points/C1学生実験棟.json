@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.4093862508584,
-      34.70154013911109
-    ]
+    "coordinates": [137.4093862508584, 34.70154013911109]
   },
   "properties": {
     "name": "C1学生実験棟",

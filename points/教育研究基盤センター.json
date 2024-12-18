@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.4076119605361,
-      34.70256165137498
-    ]
+    "coordinates": [137.4076119605361, 34.70256165137498]
   },
   "properties": {
     "name": "教育研究基盤センター",

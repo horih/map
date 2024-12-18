@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.4082585287818,
-      34.702705802834245
-    ]
+    "coordinates": [137.4082585287818, 34.702705802834245]
   },
   "properties": {
     "name": "E0低層実験棟",

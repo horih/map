@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.4067071611545,
-      34.70117822963961
-    ]
+    "coordinates": [137.4067071611545, 34.70117822963961]
   },
   "properties": {
     "name": "トレーニングジム",

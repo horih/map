@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40761338863814,
-      34.70060045557979
-    ]
+    "coordinates": [137.40761338863814, 34.70060045557979]
   },
   "properties": {
     "name": "サカキパーク",

@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.40801426440055,
-      34.70314452439543
-    ]
+    "coordinates": [137.40801426440055, 34.70314452439543]
   },
   "properties": {
     "name": "駐輪場",

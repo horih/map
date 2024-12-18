@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.41104305330663,
-      34.69997416553386
-    ]
+    "coordinates": [137.41104305330663, 34.69997416553386]
   },
   "properties": {
     "name": "南駐車場",

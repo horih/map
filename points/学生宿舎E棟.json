@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.4048798453893,
-      34.702508982480154
-    ]
+    "coordinates": [137.4048798453893, 34.702508982480154]
   },
   "properties": {
     "name": "学生宿舎E棟",

@@ -2,10 +2,7 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [
-      137.41275944830795,
-      34.70087834660231
-    ]
+    "coordinates": [137.41275944830795, 34.70087834660231]
   },
   "properties": {
     "name": "バス停",
