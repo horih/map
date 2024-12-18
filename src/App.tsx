@@ -44,6 +44,7 @@ export function App() {
       initialViewState={{
         longitude: center[0],
         latitude: center[1],
+        zoom: 16,
       }}
       maxBounds={maxBounds}
       attributionControl={false}
