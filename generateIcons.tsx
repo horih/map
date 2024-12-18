@@ -1,5 +1,4 @@
 import {
-  IconAd,
   IconArcheryArrow,
   IconBallBaseball,
   IconBallBasketball,
@@ -27,44 +26,52 @@ import {
 } from '@tabler/icons-react';
 import { renderToString } from 'react-dom/server';
 import React from 'react';
-import sharp from 'sharp';
 import { join } from 'node:path';
+import { writeFileSync } from 'node:fs';
+import tmp from 'tmp';
+import { execSync } from 'node:child_process';
 
-async function generateIcon(id: string, Icon: TablerIcon, color = '#8A8A8A') {
-  const svg = renderToString(
+function generateIcon(Icon: TablerIcon, color = '#8A8A8A') {
+  return renderToString(
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-      <title>{id}</title>
       <rect x="0" y="0" width="32" height="32" rx="8" ry="8" fill={color} />
       <Icon x="4" y="4" color="#FFFFFF" />
     </svg>,
   );
-  await sharp(Buffer.from(svg))
-    .webp()
-    .toFile(join(import.meta.dirname, `public/generated/${id}.webp`));
 }
 
-await generateIcon('default', IconMapPin);
+tmp.dir({ unsafeCleanup: true }, async (_, path, cleanup) => {
+  writeFileSync(`${path}/default.svg`, generateIcon(IconMapPin));
 
-await generateIcon('a_building', IconLetterA, '#A12E2A');
-await generateIcon('b_building', IconLetterB, '#D88535');
-await generateIcon('c_building', IconLetterC, '#377641');
-await generateIcon('d_building', IconLetterD, '#1E3368');
-await generateIcon('e_building', IconLetterE, '#2B66B1');
-await generateIcon('f_building', IconLetterF, '#814A8C');
-await generateIcon('g_building', IconLetterG, '#201816');
+  writeFileSync(`${path}/a_building.svg`, generateIcon(IconLetterA, '#A12E2A'));
+  writeFileSync(`${path}/b_building.svg`, generateIcon(IconLetterB, '#D88535'));
+  writeFileSync(`${path}/c_building.svg`, generateIcon(IconLetterC, '#377641'));
+  writeFileSync(`${path}/d_building.svg`, generateIcon(IconLetterD, '#1E3368'));
+  writeFileSync(`${path}/e_building.svg`, generateIcon(IconLetterE, '#2B66B1'));
+  writeFileSync(`${path}/f_building.svg`, generateIcon(IconLetterF, '#814A8C'));
+  writeFileSync(`${path}/g_building.svg`, generateIcon(IconLetterG, '#201816'));
 
-await generateIcon('dormitory', IconHome);
-await generateIcon('park', IconTrees);
-await generateIcon('tennis', IconBallTennis);
-await generateIcon('training_gym', IconBarbellFilled);
-await generateIcon('bus_stop', IconBusStop);
-await generateIcon('pool', IconSwimming);
-await generateIcon('kyudo', IconArcheryArrow);
-await generateIcon('health_care', IconStethoscope);
-await generateIcon('gym', IconBallBasketball);
-await generateIcon('bicycle_parking', IconMotorbike);
-await generateIcon('parking', IconParking);
-await generateIcon('library', IconBook);
-await generateIcon('canteen', IconToolsKitchen2);
-await generateIcon('baseball', IconBallBaseball);
-await generateIcon('athletic', IconRun);
+  writeFileSync(`${path}/dormitory.svg`, generateIcon(IconHome));
+  writeFileSync(`${path}/park.svg`, generateIcon(IconTrees));
+  writeFileSync(`${path}/tennis.svg`, generateIcon(IconBallTennis));
+  writeFileSync(`${path}/training_gym.svg`, generateIcon(IconBarbellFilled));
+  writeFileSync(`${path}/bus_stop.svg`, generateIcon(IconBusStop));
+  writeFileSync(`${path}/pool.svg`, generateIcon(IconSwimming));
+  writeFileSync(`${path}/kyudo.svg`, generateIcon(IconArcheryArrow));
+  writeFileSync(`${path}/health_care.svg`, generateIcon(IconStethoscope));
+  writeFileSync(`${path}/gym.svg`, generateIcon(IconBallBasketball));
+  writeFileSync(`${path}/bicycle_parking.svg`, generateIcon(IconMotorbike));
+  writeFileSync(`${path}/parking.svg`, generateIcon(IconParking));
+  writeFileSync(`${path}/library.svg`, generateIcon(IconBook));
+  writeFileSync(`${path}/canteen.svg`, generateIcon(IconToolsKitchen2));
+  writeFileSync(`${path}/baseball.svg`, generateIcon(IconBallBaseball));
+  writeFileSync(`${path}/athletic.svg`, generateIcon(IconRun));
+
+  execSync(`spreet ${path} ${join(import.meta.dirname, 'public/sprite')}`);
+  execSync(
+    `spreet --retina ${path} ${join(import.meta.dirname, 'public/sprite@2x')}`,
+  );
+
+  cleanup();
+});
