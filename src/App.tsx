@@ -10,6 +10,7 @@ import {
   ScaleControl,
   Source,
   useControl,
+  useMap,
 } from 'react-map-gl/maplibre';
 import { ButtonControl } from './ButtonControl';
 
@@ -29,29 +30,35 @@ function useLocalStorage(key: string, init: string) {
   ] as const;
 }
 
-function LanguageControl({ onClick }: { onClick: (e: MouseEvent) => void }) {
-  const container = useRef<HTMLDivElement>(null);
-
-  const button = document.createElement('button');
-  button.setAttribute('type', 'button');
-  button.addEventListener('click', onClick);
-  button.style.display = 'flex';
-  button.style.justifyContent = 'center';
-  button.style.alignItems = 'center';
+function LanguageControl({ onClick }: { onClick: () => void }) {
+  const button = useRef<HTMLButtonElement>(null);
+  const { current: map } = useMap();
 
   useEffect(() => {
-    if (container.current) {
-      button.innerHTML = container.current?.innerHTML;
+    if (!map || !button.current) {
+      return;
     }
-  }, [button]);
-
-  useControl(() => new ButtonControl(button), {
-    position: 'top-left',
-  });
+    const control = new ButtonControl(button.current);
+    map.addControl(control, 'top-left');
+    return () => {
+      map.removeControl(control);
+    };
+  }, [map]);
 
   return (
-    <div ref={container} style={{ display: 'none' }}>
-      <IconLanguageHiragana />
+    <div style={{ display: 'none' }}>
+      <button
+        ref={button}
+        type="button"
+        onClick={onClick}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <IconLanguageHiragana />
+      </button>
     </div>
   );
 }
