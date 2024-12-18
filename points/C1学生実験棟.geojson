@@ -10,7 +10,7 @@
   "properties": {
     "name": "C1学生実験棟",
     "label:ja": "C1学生実験棟",
-    "label:en": "",
+    "label:en": "C1 Building",
     "icon": "c_building"
   }
 }

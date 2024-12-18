@@ -10,7 +10,7 @@
   "properties": {
     "name": "C研究棟",
     "label:ja": "C研究棟",
-    "label:en": "",
+    "label:en": "C Building",
     "icon": "c_building"
   }
 }

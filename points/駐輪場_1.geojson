@@ -10,7 +10,7 @@
   "properties": {
     "name": "駐輪場",
     "label:ja": "駐輪場",
-    "label:en": "",
+    "label:en": "Parking Area for Bicycles",
     "icon": "bicycle_parking"
   }
 }

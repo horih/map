@@ -10,7 +10,7 @@
   "properties": {
     "name": "東駐車場",
     "label:ja": "東駐車場",
-    "label:en": "",
+    "label:en": "East Parking",
     "icon": "parking"
   }
 }

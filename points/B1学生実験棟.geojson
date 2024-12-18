@@ -10,7 +10,7 @@
   "properties": {
     "name": "B1学生実験棟",
     "label:ja": "B1学生実験棟",
-    "label:en": "",
+    "label:en": "B1 Building",
     "icon": "b_building"
   }
 }

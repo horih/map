@@ -10,7 +10,7 @@
   "properties": {
     "name": "トレーニングジム",
     "label:ja": "トレーニングジム",
-    "label:en": "",
+    "label:en": "Training Gym",
     "icon": "training_gym"
   }
 }

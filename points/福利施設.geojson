@@ -10,7 +10,7 @@
   "properties": {
     "name": "福利施設",
     "label:ja": "福利施設",
-    "label:en": "",
+    "label:en": "Welfare Facilities",
     "icon": "canteen"
   }
 }

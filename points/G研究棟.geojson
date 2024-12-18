@@ -10,7 +10,7 @@
   "properties": {
     "name": "G研究棟",
     "label:ja": "G研究棟",
-    "label:en": "",
+    "label:en": "G Building",
     "icon": "g_building"
   }
 }

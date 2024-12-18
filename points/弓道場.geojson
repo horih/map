@@ -10,7 +10,7 @@
   "properties": {
     "name": "弓道場",
     "label:ja": "弓道場",
-    "label:en": "",
+    "label:en": "Kyudo Hall",
     "icon": "kyudo"
   }
 }

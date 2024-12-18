@@ -10,7 +10,7 @@
   "properties": {
     "name": "陸上競技場",
     "label:ja": "陸上競技場",
-    "label:en": "",
+    "label:en": "Athletic Field",
     "icon": "athletic"
   }
 }

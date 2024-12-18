@@ -10,7 +10,7 @@
   "properties": {
     "name": "附属図書館",
     "label:ja": "附属図書館",
-    "label:en": "",
+    "label:en": "Library",
     "icon": "library"
   }
 }

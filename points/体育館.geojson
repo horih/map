@@ -10,7 +10,7 @@
   "properties": {
     "name": "体育館",
     "label:ja": "体育館",
-    "label:en": "",
+    "label:en": "Gym",
     "icon": "gym"
   }
 }

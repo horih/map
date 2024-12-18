@@ -10,7 +10,7 @@
   "properties": {
     "name": "テニスコート",
     "label:ja": "テニスコート",
-    "label:en": "",
+    "label:en": "Tennis Court",
     "icon": "tennis"
   }
 }

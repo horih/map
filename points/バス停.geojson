@@ -10,7 +10,7 @@
   "properties": {
     "name": "バス停",
     "label:ja": "バス停",
-    "label:en": "",
+    "label:en": "Bus Stop",
     "icon": "bus_stop"
   }
 }

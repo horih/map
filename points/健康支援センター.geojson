@@ -10,7 +10,7 @@
   "properties": {
     "name": "健康支援センター",
     "label:ja": "健康支援センター",
-    "label:en": "",
+    "label:en": "Health Support Center",
     "icon": "health_care"
   }
 }

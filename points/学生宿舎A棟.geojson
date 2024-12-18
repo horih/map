@@ -10,7 +10,7 @@
   "properties": {
     "name": "学生宿舎A棟",
     "label:ja": "学生宿舎A棟",
-    "label:en": "",
+    "label:en": "Student Dormitory A",
     "icon": "dormitory"
   }
 }

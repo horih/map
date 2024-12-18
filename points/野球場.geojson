@@ -10,7 +10,7 @@
   "properties": {
     "name": "野球場",
     "label:ja": "野球場",
-    "label:en": "",
+    "label:en": "Baseball Field",
     "icon": "baseball"
   }
 }
