@@ -85,6 +85,9 @@ export function App() {
           enableHighAccuracy: true,
         }}
         trackUserLocation={true}
+        fitBoundsOptions={{
+          maxZoom: 18,
+        }}
       />
       <AttributionControl
         compact={true}
