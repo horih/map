@@ -55,7 +55,12 @@ export function App() {
     >
       <NavigationControl />
       <ScaleControl />
-      <GeolocateControl />
+      <GeolocateControl
+        positionOptions={{
+          enableHighAccuracy: true,
+        }}
+        trackUserLocation={true}
+      />
       <AttributionControl
         compact={true}
         customAttribution="国土地理院ベクトルタイルを加工して作成"
