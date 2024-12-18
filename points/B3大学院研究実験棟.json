@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4099523114789, 34.70186790262558]
+  },
+  "properties": {
+    "label:ja": "B3大学院研究実験棟",
+    "label:en": "B3 Building",
+    "icon": "b_building"
+  }
+}

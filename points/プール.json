@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40593184779016, 34.70060540139768]
+  },
+  "properties": {
+    "label:ja": "プール",
+    "label:en": "Swimming Pool",
+    "icon": "pool"
+  }
+}

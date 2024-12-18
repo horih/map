@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40595618029727, 34.70103825765955]
+  },
+  "properties": {
+    "label:ja": "体育館",
+    "label:en": "Gym",
+    "icon": "gym"
+  }
+}

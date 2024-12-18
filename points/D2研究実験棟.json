@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40833070341006, 34.70142469744087]
+  },
+  "properties": {
+    "label:ja": "D2研究実験棟",
+    "label:en": "D2 Building",
+    "icon": "d_building"
+  }
+}

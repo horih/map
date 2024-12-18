@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40801426440055, 34.70314452439543]
+  },
+  "properties": {
+    "label:ja": "駐輪場",
+    "label:en": "Parking Area for Bicycles",
+    "icon": "bicycle_parking"
+  }
+}

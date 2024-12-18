@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4076119605361, 34.70256165137498]
+  },
+  "properties": {
+    "label:ja": "教育研究基盤センター",
+    "label:en": "Center for Education and Research Infrastructure"
+  }
+}

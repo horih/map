@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40872699776037, 34.70253376712775]
+  },
+  "properties": {
+    "label:ja": "E3低層実験棟",
+    "label:en": "E3 Building",
+    "icon": "e_building"
+  }
+}

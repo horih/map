@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41062269115997, 34.701980407552256]
+  },
+  "properties": {
+    "label:ja": "A2講義棟",
+    "label:en": "A2 Building",
+    "icon": "a_building"
+  }
+}

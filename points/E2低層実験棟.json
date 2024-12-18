@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40828480996248, 34.70248814569504]
+  },
+  "properties": {
+    "label:ja": "E2低層実験棟",
+    "label:en": "E2 Building",
+    "icon": "e_building"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.406929408027, 34.70004451606209]
+  },
+  "properties": {
+    "label:ja": "生活廃水処理施設",
+    "label:en": "Disposal Facilities for Waste Materials"
+  }
+}

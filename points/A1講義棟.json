@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41029885466304, 34.70194010608442]
+  },
+  "properties": {
+    "label:ja": "A1講義棟",
+    "label:en": "A1 Building",
+    "icon": "a_building"
+  }
+}

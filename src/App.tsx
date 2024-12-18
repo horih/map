@@ -79,7 +79,7 @@ export function App() {
             'icon-image': ['coalesce', ['get', 'icon'], 'default'],
             'text-field': [
               'format',
-              ['coalesce', ['get', `label:${language}`], ['get', 'name']],
+              ['coalesce', ['get', `label:${language}`], ['get', 'label:ja']],
               { 'font-scale': 0.8 },
             ],
             'text-font': ['Noto Sans CJK JP Regular'],

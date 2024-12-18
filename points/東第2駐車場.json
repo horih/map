@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41326352920913, 34.70014870359407]
+  },
+  "properties": {
+    "label:ja": "東第2駐車場",
+    "label:en": "Second East Parking",
+    "icon": "parking"
+  }
+}

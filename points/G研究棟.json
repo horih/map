@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4073236251395, 34.70113061190088]
+  },
+  "properties": {
+    "label:ja": "G研究棟",
+    "label:en": "G Building",
+    "icon": "g_building"
+  }
+}

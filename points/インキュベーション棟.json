@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40892831119538, 34.703169246659286]
+  },
+  "properties": {
+    "label:ja": "インキュベーション棟",
+    "label:en": "Incubation Center for Venture Business"
+  }
+}

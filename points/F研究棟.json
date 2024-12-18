@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40785764413454, 34.701139841553726]
+  },
+  "properties": {
+    "label:ja": "F研究棟",
+    "label:en": "F Building",
+    "icon": "f_building"
+  }
+}

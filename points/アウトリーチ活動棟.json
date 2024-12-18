@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41068275724376, 34.70091171903043]
+  },
+  "properties": {
+    "label:ja": "アウトリーチ活動棟",
+    "label:en": "Outreach Activities Building"
+  }
+}

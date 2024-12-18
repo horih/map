@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40749730161315, 34.703085860646326]
+  },
+  "properties": {
+    "label:ja": "北駐車場",
+    "label:en": "North Parking",
+    "icon": "parking"
+  }
+}

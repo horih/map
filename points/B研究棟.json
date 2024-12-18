@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41001090606363, 34.701478784156905]
+  },
+  "properties": {
+    "label:ja": "B研究棟",
+    "label:en": "B Building",
+    "icon": "b_building"
+  }
+}

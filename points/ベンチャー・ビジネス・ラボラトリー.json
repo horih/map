@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4101472129351, 34.70327783462086]
+  },
+  "properties": {
+    "label:ja": "ベンチャー・ビジネス・ラボラトリー",
+    "label:en": "Venture Business Laboratory"
+  }
+}

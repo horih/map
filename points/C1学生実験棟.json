@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4093862508584, 34.70154013911109]
+  },
+  "properties": {
+    "label:ja": "C1学生実験棟",
+    "label:en": "C1 Building",
+    "icon": "c_building"
+  }
+}

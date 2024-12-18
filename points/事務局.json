@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41119865745355, 34.70084853864866]
+  },
+  "properties": {
+    "label:ja": "事務局",
+    "label:en": "Secretariat"
+  }
+}

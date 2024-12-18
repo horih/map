@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41104305330663, 34.69997416553386]
+  },
+  "properties": {
+    "label:ja": "南駐車場",
+    "label:en": "South Parking",
+    "icon": "parking"
+  }
+}

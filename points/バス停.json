@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41275944830795, 34.70087834660231]
+  },
+  "properties": {
+    "label:ja": "バス停",
+    "label:en": "Bus Stop",
+    "icon": "bus_stop"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40868128968742, 34.70144467359839]
+  },
+  "properties": {
+    "label:ja": "D1学生実験棟",
+    "label:en": "D1 Building",
+    "icon": "d_building"
+  }
+}

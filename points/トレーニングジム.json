@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4067071611545, 34.70117822963961]
+  },
+  "properties": {
+    "label:ja": "トレーニングジム",
+    "label:en": "Training Gym",
+    "icon": "training_gym"
+  }
+}

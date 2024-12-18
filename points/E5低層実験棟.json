@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40914205624688, 34.70257468377807]
+  },
+  "properties": {
+    "label:ja": "E5低層実験棟",
+    "label:en": "E5 Building",
+    "icon": "e_building"
+  }
+}

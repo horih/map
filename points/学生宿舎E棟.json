@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4048798453893, 34.702508982480154]
+  },
+  "properties": {
+    "label:ja": "学生宿舎E棟",
+    "label:en": "Student Dormitory E",
+    "icon": "dormitory"
+  }
+}
