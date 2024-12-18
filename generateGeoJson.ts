@@ -10,7 +10,7 @@ const GeoJSON = z.object({
     coordinates: z.array(z.number()).length(2),
   }),
   properties: z.object({
-    name: z.string(),
+    name: z.string().optional(),
     "label:ja": z.string().optional(),
     "label:en": z.string().optional(),
     icon: z.string().optional(),
