@@ -8,6 +8,7 @@ import {
   ScaleControl,
   Source,
 } from 'react-map-gl/maplibre';
+import { useLocation } from 'react-use';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
 
@@ -30,6 +31,9 @@ export function App() {
     (bounds[0][0] + bounds[1][0]) / 2,
     (bounds[0][1] + bounds[1][1]) / 2,
   ];
+
+  const location = useLocation();
+  const language = location.pathname?.replace(/\/?$/, '') === '/en' ? 'en' : 'ja';
 
   return (
     <MapLibre
@@ -73,7 +77,11 @@ export function App() {
           type="symbol"
           layout={{
             'icon-image': ['coalesce', ['get', 'icon'], 'default'],
-            'text-field': ['format', ['get', 'name'], { 'font-scale': 0.8 }],
+            'text-field': [
+              'format',
+              ['coalesce', ['get', `label:${language}`], ['get', 'name']],
+              { 'font-scale': 0.8 },
+            ],
             'text-font': ['Noto Sans CJK JP Regular'],
             'text-offset': [0, 1],
             'text-anchor': 'top',

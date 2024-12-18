@@ -11,6 +11,8 @@ const GeoJSON = z.object({
   }),
   properties: z.object({
     name: z.string(),
+    "label:ja": z.string().optional(),
+    "label:en": z.string().optional(),
     icon: z.string().optional(),
   }),
 });
