@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40707192164774, 34.701898597734925]
+  },
+  "properties": {
+    "name": "I-1研究棟"
+  }
+}

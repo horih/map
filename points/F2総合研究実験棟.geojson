@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40783627421615, 34.70167945629767]
+    "coordinates": [
+      137.40783627421615,
+      34.70167945629767
+    ]
   },
   "properties": {
     "name": "F2総合研究実験棟",
+    "label:ja": "F2総合研究実験棟",
+    "label:en": "",
     "icon": "f_building"
   }
 }

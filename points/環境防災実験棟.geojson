@@ -2,9 +2,14 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.4093572396468, 34.7032207517648]
+    "coordinates": [
+      137.4093572396468,
+      34.7032207517648
+    ]
   },
   "properties": {
-    "name": "環境防災実験棟"
+    "name": "環境防災実験棟",
+    "label:ja": "環境防災実験棟",
+    "label:en": ""
   }
 }

@@ -2,9 +2,14 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40593534462562, 34.70307923186731]
+    "coordinates": [
+      137.40593534462562,
+      34.70307923186731
+    ]
   },
   "properties": {
-    "name": "共用棟"
+    "name": "共用棟",
+    "label:ja": "共用棟",
+    "label:en": ""
   }
 }

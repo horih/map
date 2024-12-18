@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40892831119538, 34.703169246659286]
+  },
+  "properties": {
+    "name": "インキュベーション棟"
+  }
+}

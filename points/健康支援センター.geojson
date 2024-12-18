@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.4064289989908, 34.701153717745484]
+    "coordinates": [
+      137.4064289989908,
+      34.701153717745484
+    ]
   },
   "properties": {
     "name": "健康支援センター",
+    "label:ja": "健康支援センター",
+    "label:en": "",
     "icon": "health_care"
   }
 }

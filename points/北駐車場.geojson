@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40749730161315, 34.703085860646326]
+    "coordinates": [
+      137.40749730161315,
+      34.703085860646326
+    ]
   },
   "properties": {
     "name": "北駐車場",
+    "label:ja": "北駐車場",
+    "label:en": "",
     "icon": "parking"
   }
 }

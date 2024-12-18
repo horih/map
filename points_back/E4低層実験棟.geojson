@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40911111526754, 34.70278571763568]
+  },
+  "properties": {
+    "name": "E4低層実験棟",
+    "icon": "e_building"
+  }
+}

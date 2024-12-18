@@ -2,9 +2,14 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.4129824257398, 34.6993360942878]
+    "coordinates": [
+      137.4129824257398,
+      34.6993360942878
+    ]
   },
   "properties": {
-    "name": "国際交流会館"
+    "name": "国際交流会館",
+    "label:ja": "国際交流会館",
+    "label:en": ""
   }
 }

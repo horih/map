@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40750558867614, 34.70137680068535]
+    "coordinates": [
+      137.40750558867614,
+      34.70137680068535
+    ]
   },
   "properties": {
     "name": "G1研究実験棟",
+    "label:ja": "G1研究実験棟",
+    "label:en": "",
     "icon": "g_building"
   }
 }

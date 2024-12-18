@@ -9,6 +9,8 @@
   },
   "properties": {
     "name": "A2講義棟",
+    "label:ja": "A2講義棟",
+    "label:en": "A2 Building",
     "icon": "a_building"
   }
 }

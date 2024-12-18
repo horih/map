@@ -2,9 +2,14 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40689972848418, 34.70023362240232]
+    "coordinates": [
+      137.40689972848418,
+      34.70023362240232
+    ]
   },
   "properties": {
-    "name": "実験廃水処理施設"
+    "name": "実験廃水処理施設",
+    "label:ja": "実験廃水処理施設",
+    "label:en": ""
   }
 }

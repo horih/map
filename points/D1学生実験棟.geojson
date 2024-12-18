@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40868128968742, 34.70144467359839]
+    "coordinates": [
+      137.40868128968742,
+      34.70144467359839
+    ]
   },
   "properties": {
     "name": "D1学生実験棟",
+    "label:ja": "D1学生実験棟",
+    "label:en": "",
     "icon": "d_building"
   }
 }

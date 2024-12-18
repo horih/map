@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40968508445155, 34.701740516843756]
+    "coordinates": [
+      137.40968508445155,
+      34.701740516843756
+    ]
   },
   "properties": {
     "name": "B2研究実験棟",
+    "label:ja": "B2研究実験棟",
+    "label:en": "",
     "icon": "b_building"
   }
 }

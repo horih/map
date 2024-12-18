@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4091191885741, 34.701802318662274]
+  },
+  "properties": {
+    "name": "C3研究実験棟",
+    "icon": "c_building"
+  }
+}

@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40555906167305, 34.70173277092232]
+    "coordinates": [
+      137.40555906167305,
+      34.70173277092232
+    ]
   },
   "properties": {
     "name": "陸上競技場",
+    "label:ja": "陸上競技場",
+    "label:en": "",
     "icon": "athletic"
   }
 }

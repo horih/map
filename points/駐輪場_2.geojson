@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.4119540008814, 34.701284281474756]
+    "coordinates": [
+      137.4119540008814,
+      34.701284281474756
+    ]
   },
   "properties": {
     "name": "駐輪場",
+    "label:ja": "駐輪場",
+    "label:en": "",
     "icon": "bicycle_parking"
   }
 }

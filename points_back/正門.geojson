@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4133954552609, 34.70072085207218]
+  },
+  "properties": {
+    "name": "正門"
+  }
+}

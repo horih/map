@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.41079627897267, 34.701434406757116]
+  },
+  "properties": {
+    "name": "A講義棟",
+    "icon": "a_building"
+  }
+}

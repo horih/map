@@ -2,10 +2,15 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.40643750073622, 34.70311622530241]
+    "coordinates": [
+      137.40643750073622,
+      34.70311622530241
+    ]
   },
   "properties": {
     "name": "学生宿舎F棟",
+    "label:ja": "学生宿舎F棟",
+    "label:en": "",
     "icon": "dormitory"
   }
 }

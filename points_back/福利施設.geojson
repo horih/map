@@ -1,0 +1,11 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.40893070074463, 34.70079612966869]
+  },
+  "properties": {
+    "name": "福利施設",
+    "icon": "canteen"
+  }
+}

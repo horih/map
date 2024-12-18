@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [137.4096383163631, 34.70085238821366]
+  },
+  "properties": {
+    "name": "情報メディア基盤センター・IT活用教育センター"
+  }
+}

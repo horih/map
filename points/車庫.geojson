@@ -2,9 +2,14 @@
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [137.41179425274566, 34.70035227347452]
+    "coordinates": [
+      137.41179425274566,
+      34.70035227347452
+    ]
   },
   "properties": {
-    "name": "車庫"
+    "name": "車庫",
+    "label:ja": "車庫",
+    "label:en": ""
   }
 }
