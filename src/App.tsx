@@ -57,7 +57,7 @@ function LanguageControl({ onClick }: { onClick: () => void }) {
           alignItems: 'center',
         }}
       >
-        <IconLanguageHiragana />
+        <IconLanguageHiragana color="#333" />
       </button>
     </div>
   );
