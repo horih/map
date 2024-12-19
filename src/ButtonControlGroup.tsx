@@ -10,18 +10,16 @@ export function ButtonControlGroup({
   position?: ControlPosition;
 }>) {
   const container = useRef(document.createElement('div'));
+  container.current.className = 'maplibregl-ctrl maplibregl-ctrl-group';
   useControl(
-    () => {
-      container.current.className = 'maplibregl-ctrl maplibregl-ctrl-group';
-      return {
-        onAdd: () => {
-          return container.current;
-        },
-        onRemove: () => {
-          container.current.parentNode?.removeChild(container.current);
-        },
-      };
-    },
+    () => ({
+      onAdd: () => {
+        return container.current;
+      },
+      onRemove: () => {
+        container.current.parentNode?.removeChild(container.current);
+      },
+    }),
     { position },
   );
   return createPortal(children, container.current);
