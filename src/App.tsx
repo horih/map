@@ -1,5 +1,4 @@
 import { IconLanguageHiragana } from '@tabler/icons-react';
-import { useEffect, useRef, useState } from 'react';
 import {
   AttributionControl,
   GeolocateControl,
@@ -9,59 +8,12 @@ import {
   NavigationControl,
   ScaleControl,
   Source,
-  useMap,
 } from 'react-map-gl/maplibre';
-import { ButtonControl } from './ButtonControl';
+import { ButtonControlGroup } from './ButtonControlGroup';
+import { useLocalStorage } from './useLocalStorage';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './App.css';
-
-function useLocalStorage(key: string, init: string) {
-  const [value, setValue] = useState(() => localStorage.getItem(key) ?? init);
-  return [
-    value,
-    (action: (prev: string) => string) => {
-      setValue((prev) => {
-        const value = action(prev);
-        localStorage.setItem(key, value);
-        return value;
-      });
-    },
-  ] as const;
-}
-
-function LanguageControl({ onClick }: { onClick: () => void }) {
-  const button = useRef<HTMLButtonElement>(null);
-  const { current: map } = useMap();
-
-  useEffect(() => {
-    if (!map || !button.current) {
-      return;
-    }
-    const control = new ButtonControl(button.current);
-    map.addControl(control, 'top-left');
-    return () => {
-      map.removeControl(control);
-    };
-  }, [map]);
-
-  return (
-    <div style={{ display: 'none' }}>
-      <button
-        ref={button}
-        type="button"
-        onClick={onClick}
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <IconLanguageHiragana color="#333" />
-      </button>
-    </div>
-  );
-}
 
 export function App() {
   const bounds = [
@@ -104,11 +56,21 @@ export function App() {
       maxBounds={maxBounds}
       attributionControl={false}
     >
-      <LanguageControl
-        onClick={() =>
-          setLanguage((language) => (language === 'en' ? 'ja' : 'en'))
-        }
-      />
+      <ButtonControlGroup position="top-left">
+        <button
+          type="button"
+          onClick={() =>
+            setLanguage((language) => (language === 'en' ? 'ja' : 'en'))
+          }
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <IconLanguageHiragana color="#333" />
+        </button>
+      </ButtonControlGroup>
       <ScaleControl position="bottom-left" />
       <AttributionControl
         position="bottom-right"
