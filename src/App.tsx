@@ -1,17 +1,15 @@
-import { IconLanguageHiragana } from '@tabler/icons-react';
 import { LngLatBounds } from 'maplibre-gl';
 import {
   AttributionControl,
   GeolocateControl,
   Layer,
-  type LngLatBoundsLike,
   Map as MapLibre,
   NavigationControl,
   ScaleControl,
   Source,
 } from 'react-map-gl/maplibre';
-import { ButtonControlGroup } from './ButtonControlGroup';
-import { useLocalStorage } from './useLocalStorage';
+import { LanguageControl } from './components/LanguageControl';
+import { PointsLayer } from './components/PointsLayer';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './App.css';
@@ -21,12 +19,7 @@ export function App() {
     [137.401885986328, 34.6975902563304],
     [137.415618896484, 34.7043644344585],
   );
-  /* const bounds = [
-    [137.401885986328, 34.6975902563304],
-    [137.415618896484, 34.7043644344585],
-  ] as const; */
-
-  const maxBounds: LngLatBoundsLike = [
+  const maxBounds = new LngLatBounds(
     [
       bounds.getWest() - (bounds.getEast() - bounds.getWest()) / 2,
       bounds.getSouth() - (bounds.getNorth() - bounds.getSouth()) / 2,
@@ -35,10 +28,7 @@ export function App() {
       bounds.getEast() + (bounds.getEast() - bounds.getWest()) / 2,
       bounds.getNorth() + (bounds.getNorth() - bounds.getSouth()) / 2,
     ],
-  ];
-
-  const [language, setLanguage] = useLocalStorage('language', 'ja');
-  document.documentElement.lang = language;
+  );
 
   return (
     <MapLibre
@@ -56,21 +46,7 @@ export function App() {
       maxBounds={maxBounds}
       attributionControl={false}
     >
-      <ButtonControlGroup position="top-left">
-        <button
-          type="button"
-          onClick={() =>
-            setLanguage((language) => (language === 'en' ? 'ja' : 'en'))
-          }
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <IconLanguageHiragana color="#333" />
-        </button>
-      </ButtonControlGroup>
+      <LanguageControl />
       <ScaleControl position="bottom-left" />
       <AttributionControl
         position="bottom-right"
@@ -100,22 +76,8 @@ export function App() {
       <Source type="geojson" data="/buildings.geojson">
         <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
       </Source>
-      <Source type="geojson" data="/points.geojson">
-        <Layer
-          type="symbol"
-          layout={{
-            'icon-image': ['coalesce', ['get', 'icon'], 'default'],
-            'text-field': [
-              'format',
-              ['coalesce', ['get', `label:${language}`], ['get', 'label:ja']],
-              { 'font-scale': 0.8 },
-            ],
-            'text-font': ['Noto Sans CJK JP Regular'],
-            'text-offset': [0, 1],
-            'text-anchor': 'top',
-          }}
-        />
-      </Source>
+
+      <PointsLayer />
     </MapLibre>
   );
 }
