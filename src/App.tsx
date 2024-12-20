@@ -35,8 +35,45 @@ export function App() {
       style={{ width: '100dvw', height: '100dvh' }}
       mapStyle={{
         version: 8,
-        sources: {},
-        layers: [],
+        sources: {
+          terrains: {
+            type: 'geojson',
+            data: '/terrains.geojson',
+          },
+          streets: {
+            type: 'geojson',
+            data: '/streets.geojson',
+          },
+          buildings: {
+            type: 'geojson',
+            data: '/buildings.geojson',
+          },
+        },
+        layers: [
+          {
+            id: 'background',
+            type: 'background',
+            paint: { 'background-color': '#F6F8FA' },
+          },
+          {
+            id: 'streets-fill',
+            source: 'streets',
+            type: 'fill',
+            paint: { 'fill-color': '#E6E6E6' },
+          },
+          {
+            id: 'streets-line',
+            source: 'streets',
+            type: 'line',
+            paint: { 'line-color': '#8B8B8B' },
+          },
+          {
+            id: 'buildings',
+            source: 'buildings',
+            type: 'fill',
+            paint: { 'fill-color': '#DFD0D8' },
+          },
+        ],
         glyphs: 'https://glyphs.geolonia.com/{fontstack}/{range}.pbf',
         sprite: '/sprite',
       }}
@@ -64,19 +101,6 @@ export function App() {
         }}
       />
       <NavigationControl position="bottom-right" />
-
-      <Layer type="background" paint={{ 'background-color': '#F6F8FA' }} />
-      <Source type="geojson" data="/terrains.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#CCF0D7' }} />
-      </Source>
-      <Source type="geojson" data="/streets.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#E6E6E6' }} />
-        <Layer type="line" paint={{ 'line-color': '#8B8B8B' }} />
-      </Source>
-      <Source type="geojson" data="/buildings.geojson">
-        <Layer type="fill" paint={{ 'fill-color': '#DFD0D8' }} />
-      </Source>
-
       <PointsLayer />
     </MapLibre>
   );
