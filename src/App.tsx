@@ -1,4 +1,5 @@
 import { IconLanguageHiragana } from '@tabler/icons-react';
+import { LngLatBounds } from 'maplibre-gl';
 import {
   AttributionControl,
   GeolocateControl,
@@ -16,23 +17,24 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import './App.css';
 
 export function App() {
-  const bounds = [
+  const bounds = new LngLatBounds(
     [137.401885986328, 34.6975902563304],
     [137.415618896484, 34.7043644344585],
-  ];
+  );
+  /* const bounds = [
+    [137.401885986328, 34.6975902563304],
+    [137.415618896484, 34.7043644344585],
+  ] as const; */
+
   const maxBounds: LngLatBoundsLike = [
     [
-      bounds[0][0] - (bounds[1][0] - bounds[0][0]) / 2,
-      bounds[0][1] - (bounds[1][1] - bounds[0][1]) / 2,
+      bounds.getWest() - (bounds.getEast() - bounds.getWest()) / 2,
+      bounds.getSouth() - (bounds.getNorth() - bounds.getSouth()) / 2,
     ],
     [
-      bounds[1][0] + (bounds[1][0] - bounds[0][0]) / 2,
-      bounds[1][1] + (bounds[1][1] - bounds[0][1]) / 2,
+      bounds.getEast() + (bounds.getEast() - bounds.getWest()) / 2,
+      bounds.getNorth() + (bounds.getNorth() - bounds.getSouth()) / 2,
     ],
-  ];
-  const center = [
-    (bounds[0][0] + bounds[1][0]) / 2,
-    (bounds[0][1] + bounds[1][1]) / 2,
   ];
 
   const [language, setLanguage] = useLocalStorage('language', 'ja');
@@ -49,9 +51,7 @@ export function App() {
         sprite: '/sprite',
       }}
       initialViewState={{
-        longitude: center[0],
-        latitude: center[1],
-        zoom: 16,
+        bounds: bounds,
       }}
       maxBounds={maxBounds}
       attributionControl={false}
